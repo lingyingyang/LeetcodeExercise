@@ -6,9 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CountPrimesTest {
     @Test
-    void whenTest_thenOk() {
+    void whenResult_thenOk() {
         CountPrimes countPrimes = new CountPrimes();
-        int result = countPrimes.getResult(10);
+        int result = countPrimes.result(10);
         System.out.println(result);
         assertEquals(4, result);
     }
