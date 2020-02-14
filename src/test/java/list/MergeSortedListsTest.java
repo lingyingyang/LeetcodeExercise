@@ -1,5 +1,6 @@
 package list;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import tree.ListNode;
 import util.NodeUtil;
@@ -9,6 +10,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Slf4j
 class MergeSortedListsTest {
     @Test
     void whenTest_givenArrayInput_thenOk() {
@@ -28,6 +30,7 @@ class MergeSortedListsTest {
 
         ListNode out = test.mergeKLists(in);
         String actual = NodeUtil.print(out);
+        log.info("actual out: {}", actual);
         String expect = "1 -> 1 -> 2 -> 3 -> 4 -> 4 -> 5 -> 6 -> ";
         assertEquals(expect, actual);
     }
