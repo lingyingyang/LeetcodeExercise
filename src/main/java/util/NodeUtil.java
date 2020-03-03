@@ -1,6 +1,6 @@
 package util;
 
-import tree.ListNode;
+import leetcode.tree.ListNode;
 
 public class NodeUtil {
     public static String print(ListNode root) {
