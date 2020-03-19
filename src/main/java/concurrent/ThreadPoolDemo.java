@@ -8,7 +8,7 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Slf4j
-public class ThreadPoolExample {
+public class ThreadPoolDemo {
     public static void main(String[] args) {
         AtomicInteger amt = new AtomicInteger(1);
         ThreadPoolExecutor executor = new ThreadPoolExecutor(

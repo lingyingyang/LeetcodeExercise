@@ -8,7 +8,7 @@ import java.util.concurrent.RecursiveTask;
 /**
  * 这是一个简单的Join/Fork计算过程，将1—1001数字相加
  */
-public class ForkJoinExample {
+public class ForkJoinDemo {
 
     public static void main(String[] args) {
         // 这是Fork/Join框架的线程池

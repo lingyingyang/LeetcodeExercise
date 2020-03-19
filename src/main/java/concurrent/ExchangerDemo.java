@@ -7,7 +7,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @Slf4j
-public class ExchangerExample {
+public class ExchangerDemo {
     private static final Exchanger<String> exchanger = new Exchanger<>();
     private static ExecutorService threadPool = Executors.newFixedThreadPool(2);
 
