@@ -47,11 +47,21 @@ public class Solution {
                 return "";
             });
         }
-        List<Future<String>> futures = executor.invokeAll(
-                tasks, 2, TimeUnit.SECONDS);
-        executor.shutdown();
-        for (Future<String> future : futures) {
-            log.info("{} isCancelled => {}", future.toString(), future.isCancelled());
+
+        List<Future<String>> futures = null;
+        try {
+            futures = executor.invokeAll(tasks, 2, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            executor.shutdown();
+            executor.awaitTermination(3, TimeUnit.SECONDS);
+        }
+
+        if (futures != null) {
+            for (Future<String> future : futures) {
+                log.info("{} isCancelled => {}", future.toString(), future.isCancelled());
+            }
         }
         return new ArrayList<>(map.values());
     }

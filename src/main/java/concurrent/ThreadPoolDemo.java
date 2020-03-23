@@ -28,8 +28,7 @@ public class ThreadPoolDemo {
 
         List<Future<String>> futures = null;
         try {
-            futures = executor.invokeAll(
-                    tasks, 2, TimeUnit.SECONDS);
+            futures = executor.invokeAll(tasks, 2, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
