@@ -1,75 +1,31 @@
 package concurrent.async;
 
+import concurrent.async.jobs.HotWaterJob;
+import concurrent.async.jobs.WashJob;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
+/**
+ * 或者可以用CompletableFuture或CountDownLatch来实现
+ * => https://juejin.im/entry/5c1b6ae0f265da61715e4c96
+ */
 @Slf4j
 public class JavaFutureDemo {
-
-    public static final int SLEEP_GAP = 500;
-
-
     public static String getCurThreadName() {
         return Thread.currentThread().getName();
     }
 
-    static class HotWaterJob implements Callable<Boolean> {
-
-        @Override
-        public Boolean call() throws Exception //②
-        {
-
-            try {
-                log.info("洗好水壶");
-                log.info("灌上凉水");
-                log.info("放在火上");
-
-                //线程睡眠一段时间，代表烧水中
-                Thread.sleep(SLEEP_GAP);
-                log.info("水开了");
-
-            } catch (InterruptedException e) {
-                log.info(" 发生异常被中断.");
-                return false;
-            }
-            log.info(" 运行结束.");
-
-            return true;
-        }
-    }
-
-    static class WashJob implements Callable<Boolean> {
-        @Override
-        public Boolean call() throws Exception {
-            try {
-                log.info("洗茶壶");
-                log.info("洗茶杯");
-                log.info("拿茶叶");
-                //线程睡眠一段时间，代表清洗中
-                Thread.sleep(SLEEP_GAP);
-                log.info("洗完了");
-
-            } catch (InterruptedException e) {
-                log.info(" 清洗工作 发生异常被中断.");
-                return false;
-            }
-            log.info(" 清洗工作  运行结束.");
-            return true;
-        }
-    }
-
-    public static void drinkTea(boolean warterOk, boolean cupOk) {
-        if (warterOk && cupOk) {
+    public static void drinkTea(boolean waterOk, boolean cupOk) {
+        if (waterOk && cupOk) {
             log.info("泡茶喝");
-        } else if (!warterOk) {
+        } else if (!waterOk) {
             log.info("烧水失败，没有茶喝了");
         } else if (!cupOk) {
             log.info("杯子洗不了，没有茶喝了");
         }
-
     }
 
     public static void main(String[] args) {
@@ -87,9 +43,10 @@ public class JavaFutureDemo {
         Thread.currentThread().setName("主线程");
 
         try {
-            boolean warterOk = hTask.get();
             boolean cupOk = wTask.get();
-            drinkTea(warterOk, cupOk);
+            boolean waterOk = hTask.get();
+            log.info("多线程取结果，get()会阻塞");
+            drinkTea(waterOk, cupOk);
         } catch (InterruptedException e) {
             log.info(getCurThreadName() + "发生异常被中断.");
         } catch (ExecutionException e) {

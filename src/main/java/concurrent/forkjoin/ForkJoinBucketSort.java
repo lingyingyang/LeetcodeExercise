@@ -1,4 +1,4 @@
-package concurrent;
+package concurrent.forkjoin;
 
 import java.util.ArrayList;
 import java.util.List;

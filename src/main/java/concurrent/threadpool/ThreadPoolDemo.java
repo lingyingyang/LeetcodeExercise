@@ -1,5 +1,6 @@
-package concurrent;
+package concurrent.threadpool;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -44,6 +45,7 @@ public class ThreadPoolDemo {
 
     static class MyTaskTimeOut implements Callable<String> {
 
+        @Override
         public String call() throws Exception {
             log.info("MyTaskTimeOut begin");
             Thread.sleep(5000);
@@ -52,13 +54,11 @@ public class ThreadPoolDemo {
         }
     }
 
+    @AllArgsConstructor
     static class MyTask implements Callable<String> {
         private int amt;
 
-        public MyTask(int amt) {
-            this.amt = amt;
-        }
-
+        @Override
         public String call() {
             log.info("MyTask{}", amt);
             return "Finish";

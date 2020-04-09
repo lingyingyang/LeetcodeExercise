@@ -1,4 +1,4 @@
-package concurrent;
+package concurrent.threadpool;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.concurrent.*;
 
 @Slf4j
-public class TimeOutThreadPoolDemo {
+public class ThreadPoolTimeOutDemo {
     public static void main(String[] args) throws InterruptedException {
         ExecutorService executor = Executors.newFixedThreadPool(4);
         List<Future<String>> futures = new ArrayList<>();

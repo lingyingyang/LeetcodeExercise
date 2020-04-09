@@ -10,6 +10,26 @@ public class JoinDemo {
         return Thread.currentThread().getName();
     }
 
+    public static void main(String[] args) {
+        Thread hThread = new HotWaterThread();
+        Thread wThread = new WashThread();
+
+        hThread.start();
+        wThread.start();
+        try {
+            // 合并烧水-线程
+            hThread.join();
+            // 合并清洗-线程
+            wThread.join();
+
+            Thread.currentThread().setName("主线程");
+            log.info("泡茶喝");
+        } catch (InterruptedException e) {
+            log.info(getCurThreadName() + "发生异常被中断.");
+        }
+        log.info(getCurThreadName() + " 运行结束.");
+    }
+
     static class HotWaterThread extends Thread {
         public HotWaterThread() {
             super("** 烧水-Thread");
@@ -30,7 +50,6 @@ public class JoinDemo {
             }
             log.info(" 运行结束.");
         }
-
     }
 
     static class WashThread extends Thread {
@@ -53,25 +72,5 @@ public class JoinDemo {
             }
             log.info(" 运行结束.");
         }
-    }
-
-    public static void main(String[] args) {
-        Thread hThread = new HotWaterThread();
-        Thread wThread = new WashThread();
-
-        hThread.start();
-        wThread.start();
-        try {
-            // 合并烧水-线程
-            hThread.join();
-            // 合并清洗-线程
-            wThread.join();
-
-            Thread.currentThread().setName("主线程");
-            log.info("泡茶喝");
-        } catch (InterruptedException e) {
-            log.info(getCurThreadName() + "发生异常被中断.");
-        }
-        log.info(getCurThreadName() + " 运行结束.");
     }
 }
