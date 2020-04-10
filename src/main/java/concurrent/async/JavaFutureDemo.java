@@ -29,15 +29,14 @@ public class JavaFutureDemo {
     }
 
     public static void main(String[] args) {
-        Callable<Boolean> hJob = new HotWaterJob();//③
-        FutureTask<Boolean> hTask =
-                new FutureTask<>(hJob);//④
-        Thread hThread = new Thread(hTask, "** 烧水-Thread");//⑤
+        Callable<Boolean> hJob = new HotWaterJob();
+        FutureTask<Boolean> hTask = new FutureTask<>(hJob);
+        Thread hThread = new Thread(hTask, "** 烧水-Thread");
 
-        Callable<Boolean> wJob = new WashJob();//③
-        FutureTask<Boolean> wTask =
-                new FutureTask<>(wJob);//④
-        Thread wThread = new Thread(wTask, "$$ 清洗-Thread");//⑤
+        Callable<Boolean> wJob = new WashJob();
+        FutureTask<Boolean> wTask = new FutureTask<>(wJob);
+        Thread wThread = new Thread(wTask, "$$ 清洗-Thread");
+
         hThread.start();
         wThread.start();
         Thread.currentThread().setName("主线程");
