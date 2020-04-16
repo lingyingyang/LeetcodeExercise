@@ -1,9 +1,9 @@
 package leetcode.tree.traversal;
 
 import leetcode.tree.TreeNode;
-import leetcode.tree.TreeNodeUtil;
 import leetcode.tree.traversal.prolemsolving.FindMaxDepth;
 import org.junit.jupiter.api.Test;
+import util.NodeUtil;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -13,7 +13,7 @@ class FindMaxDepthTest {
 
     @Test
     void testPreOrder() {
-        TreeNode root = TreeNodeUtil.getInstance();
+        TreeNode root = NodeUtil.getInstance();
         assertEquals(3, test.byPreOrderTraversal(root));
 
         TreeNode root1 = new TreeNode(3);
@@ -26,7 +26,7 @@ class FindMaxDepthTest {
 
     @Test
     void testPostOrder() {
-        TreeNode root = TreeNodeUtil.getInstance();
+        TreeNode root = NodeUtil.getInstance();
         assertEquals(3, test.byPostOrderTraversal(root));
     }
 }

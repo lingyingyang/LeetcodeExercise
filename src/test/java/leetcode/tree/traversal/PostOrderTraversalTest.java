@@ -1,8 +1,8 @@
 package leetcode.tree.traversal;
 
 import leetcode.tree.TreeNode;
-import leetcode.tree.TreeNodeUtil;
 import org.junit.jupiter.api.Test;
+import util.NodeUtil;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PostOrderTraversalTest {
     private final PostOrderTraversal test = new PostOrderTraversal();
-    private final TreeNode root = TreeNodeUtil.getInstance();
+    private final TreeNode root = NodeUtil.getInstance();
 
     @Test
     void testRecursion() {
