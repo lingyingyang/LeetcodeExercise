@@ -3,12 +3,6 @@ package leetcode.arrays;
 import java.util.Arrays;
 
 public class MergeSortedArray {
-    public static void merge(int[] A, int m, int[] B, int n) {
-        int i = m - 1, j = n - 1, k = m + n - 1;
-        while (i > -1 && j > -1) A[k--] = (A[i] > B[j]) ? A[i--] : B[j--];
-        while (j > -1) A[k--] = B[j--];
-    }
-
     public static void main(String[] args) {
         int[] nums1 = new int[]{1, 2, 3, 0, 0, 0};
         int m = 3;
@@ -16,5 +10,15 @@ public class MergeSortedArray {
         int n = 3;
         merge(nums1, m, nums2, n);
         System.out.println(Arrays.toString(nums1));
+    }
+
+    public static void merge(int[] A, int m, int[] B, int n) {
+        int idxM = m - 1, idxN = n - 1, i = m + n - 1;
+        while (idxM > -1 && idxN > -1) {
+            A[i--] = (A[idxM] > B[idxN]) ? A[idxM--] : B[idxN--];
+        }
+        while (idxN > -1) {
+            A[i--] = B[idxN--];
+        }
     }
 }
