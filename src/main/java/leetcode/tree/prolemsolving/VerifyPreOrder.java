@@ -1,4 +1,4 @@
-package leetcode.tree.binarytree;
+package leetcode.tree.prolemsolving;
 
 import java.util.Stack;
 

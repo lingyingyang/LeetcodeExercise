@@ -1,4 +1,4 @@
-package leetcode.tree.traversal.prolemsolving;
+package leetcode.tree.prolemsolving;
 
 import leetcode.tree.TreeNode;
 import org.junit.jupiter.api.Test;

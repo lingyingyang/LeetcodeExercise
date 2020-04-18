@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * 前序遍历【what】首先访问根节点，然后遍历左子树，最后遍历右子树
+ */
 public class PreOrderTraversal {
     public List<Integer> preOrderTraversalByRecursion(TreeNode root) {
         List<Integer> ans = new ArrayList<>();

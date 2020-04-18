@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
-class SolutionTest {
+class SortSolutionTest {
     @Test
     void name() {
         Random r = new Random();

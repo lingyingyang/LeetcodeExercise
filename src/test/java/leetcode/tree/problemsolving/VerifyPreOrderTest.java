@@ -1,5 +1,6 @@
-package leetcode.tree.binarytree;
+package leetcode.tree.problemsolving;
 
+import leetcode.tree.prolemsolving.VerifyPreOrder;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;

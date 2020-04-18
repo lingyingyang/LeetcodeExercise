@@ -1,6 +1,7 @@
-package leetcode.tree.traversal.prolemsolving;
+package leetcode.tree.problemsolving;
 
 import leetcode.tree.TreeNode;
+import leetcode.tree.prolemsolving.BuildTreeWithInPostOrder;
 import org.junit.jupiter.api.Test;
 import util.NodeUtil;
 

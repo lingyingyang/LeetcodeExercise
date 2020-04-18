@@ -3,7 +3,7 @@ package leetcode.sort;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-class Solution {
+class SortSolution {
 
     private static final int QUICK_SORTS_HOLD = 50;
     private static final int MERGE_SORTS_HOLD = 300;

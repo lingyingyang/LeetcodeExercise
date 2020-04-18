@@ -7,6 +7,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
+/**
+ * 后序遍历【what】是先遍历左子树，然后遍历右子树，最后访问树的根节点
+ * 【how】使用栈来处理表达式会变得更加容易，编程常用
+ */
 public class PostOrderTraversal {
     public List<Integer> byRecursion(TreeNode root) {
         List<Integer> ans = new ArrayList<>();

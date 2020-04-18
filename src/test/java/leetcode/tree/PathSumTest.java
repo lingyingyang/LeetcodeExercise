@@ -1,5 +1,6 @@
 package leetcode.tree;
 
+import leetcode.tree.prolemsolving.PathSum;
 import org.junit.jupiter.api.Test;
 
 class PathSumTest {

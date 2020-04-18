@@ -1,4 +1,6 @@
-package leetcode.tree;
+package leetcode.tree.prolemsolving;
+
+import leetcode.tree.TreeNode;
 
 import java.util.HashMap;
 
@@ -28,5 +30,16 @@ public class PathSum {
         count += helper(root.left, currSum, target, map) + helper(root.right, currSum, target, map);
 //        map.put(currSum, map.get(currSum) - 1);
         return count;
+    }
+
+    public boolean hasPathSum(TreeNode root, int sum) {
+        if (root == null) return false;
+
+        int remain = sum - root.val;
+        if (root.left == null && root.right == null) { //叶子节点
+            return remain == 0;
+        }
+        //递归调用函数，分别判断根结点的左节点和右节点
+        return hasPathSum(root.left, remain) || hasPathSum(root.right, remain);
     }
 }

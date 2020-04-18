@@ -6,18 +6,22 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * 中序遍历【what】是先遍历左子树，然后访问根节点，然后遍历右子树
+ * 【how】二叉搜索树，可以得到一个递增的有序序列
+ */
 public class InOrderTraversal {
     public List<Integer> inOrderTraversalByRecursion(TreeNode root) {
         List<Integer> ans = new ArrayList<>();
-        recursionHelper(ans, root);
+        helper(ans, root);
         return ans;
     }
 
-    private void recursionHelper(List<Integer> ans, TreeNode root) {
+    private void helper(List<Integer> ans, TreeNode root) {
         if (root != null) {
-            recursionHelper(ans, root.left);
+            helper(ans, root.left);
             ans.add(root.val);
-            recursionHelper(ans, root.right);
+            helper(ans, root.right);
         }
     }
 

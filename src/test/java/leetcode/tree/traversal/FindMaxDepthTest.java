@@ -1,7 +1,7 @@
 package leetcode.tree.traversal;
 
 import leetcode.tree.TreeNode;
-import leetcode.tree.traversal.prolemsolving.FindMaxDepth;
+import leetcode.tree.prolemsolving.FindMaxDepth;
 import org.junit.jupiter.api.Test;
 import util.NodeUtil;
 
