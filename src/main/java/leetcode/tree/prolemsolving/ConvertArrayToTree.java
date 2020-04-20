@@ -16,7 +16,7 @@ public class ConvertArrayToTree {
         // always choose left middle node as a root
         int mid = (left + right) / 2;
 
-        // inorder traversal: left -> node -> right
+        // 中序遍历: left -> node -> right
         TreeNode root = new TreeNode(nums[mid]);
         root.left = helper(nums, left, mid - 1);
         root.right = helper(nums, mid + 1, right);

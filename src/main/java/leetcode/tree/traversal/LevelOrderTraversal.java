@@ -10,18 +10,18 @@ public class LevelOrderTraversal {
     public TreeNode createTree(int[] nums) {
         TreeNode root = null;
         Queue<TreeNode> queue = new LinkedList<>();
-        System.out.println("=========================");
+//        System.out.println("=========================");
         for (int num : nums) {
             root = insertValue(root, num, queue);
             //for debug print
-            for (TreeNode q : queue) {
-                if (q == null) {
-                    System.out.printf("%s", "null ");
-                } else {
-                    System.out.print(q.val + " ");
-                }
-            }
-            System.out.println();
+//            for (TreeNode q : queue) {
+//                if (q == null) {
+//                    System.out.printf("%s", "null ");
+//                } else {
+//                    System.out.print(q.val + " ");
+//                }
+//            }
+//            System.out.println();
         }
         new RemoveNodes().removeLeaf(root, -1);
         return root;

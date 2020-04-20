@@ -8,21 +8,20 @@ public class VerifyTree {
         root.left = new TreeNode(1);
         root.right = new TreeNode(3);
         VerifyTree t = new VerifyTree();
-        System.out.println(t.isValidBST(root));
+        System.out.println(t.isValidBST(root));//true
     }
 
     private boolean helper(TreeNode node, Integer lower, Integer upper) {
         if (node == null) return true;
 
         int val = node.val;
-        //不得小于下界
-        if (lower != null && val <= lower) return false;
-        //不得大于上届
-        if (upper != null && val >= upper) return false;
+        if (lower != null && val <= lower) return false;//不得小于下界
+        if (upper != null && val >= upper) return false;//不得大于上届
 
-        if (!helper(node.left, lower, val)) return false;
-        if (!helper(node.right, val, upper)) return false;
-        return true;
+//        if (!helper(node.left, lower, val)) return false;
+//        if (!helper(node.right, val, upper)) return false;
+//        return true;
+        return helper(node.left, lower, val) && helper(node.right, val, upper);
     }
 
     public boolean isValidBST(TreeNode root) {

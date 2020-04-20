@@ -5,6 +5,9 @@ import leetcode.tree.TreeNode;
 public class FindMaxDepth {
     private int ans;
 
+    /**
+     * 先序遍历 root->left->right
+     */
     public int byPreOrderTraversal(TreeNode root) {
         ans = 1;
         preOrderHelper(root, ans);
@@ -22,6 +25,9 @@ public class FindMaxDepth {
         preOrderHelper(root.right, depth + 1);
     }
 
+    /**
+     * 后序遍历 left->right->root
+     */
     public int byPostOrderTraversal(TreeNode root) {
         if (root == null) {
             return 0; // return 0 for null node

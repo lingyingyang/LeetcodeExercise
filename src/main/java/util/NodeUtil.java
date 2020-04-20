@@ -7,13 +7,10 @@ import leetcode.tree.traversal.LevelOrderTraversal;
 import java.util.List;
 
 public class NodeUtil {
-//    public static TreeNode genTree(int[] nums) {
-//        int idx = 0;
-//
-//        TreeNode node = new TreeNode(nums[idx++]);
-//        node.left = new TreeNode(nums[idx++]);
-//        node.right = new TreeNode(nums[idx++]);
-//    }
+    public static TreeNode createTree(int[] nums) {
+        LevelOrderTraversal t = new LevelOrderTraversal();
+        return t.createTree(nums);
+    }
 
     public static String print(ListNode root) {
         StringBuffer out = new StringBuffer();
