@@ -13,7 +13,7 @@ class FindMaxDepthTest {
 
     @Test
     void testPreOrder() {
-        TreeNode root = NodeUtil.getInstance();
+        TreeNode root = NodeUtil.instanceSimple();
         assertEquals(3, test.byPreOrderTraversal(root));
 
         TreeNode root1 = new TreeNode(3);
@@ -26,7 +26,7 @@ class FindMaxDepthTest {
 
     @Test
     void testPostOrder() {
-        TreeNode root = NodeUtil.getInstance();
+        TreeNode root = NodeUtil.instanceSimple();
         assertEquals(3, test.byPostOrderTraversal(root));
     }
 }

@@ -7,10 +7,10 @@ import java.util.Map;
 public class IntersectionOfTwoArrays {
     public static void main(String[] args) {
         int[] nums1 = {1, 2, 2, 1};
-        int[] nums2 = {2, 2};
+        int[] nums2 = {2, 2, 3};
         IntersectionOfTwoArrays t = new IntersectionOfTwoArrays();
         int[] out = t.intersect(nums1, nums2);
-        System.out.println(Arrays.toString(out));
+        System.out.println(Arrays.toString(out));//2, 2
     }
 
     public int[] intersect(int[] nums1, int[] nums2) {

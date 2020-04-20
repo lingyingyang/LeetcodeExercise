@@ -22,28 +22,29 @@ public class LowestCommonAncestor {
     // Variable to store LCA node.
     private TreeNode ans = null;
 
-    private boolean recurseTree(TreeNode currentNode, TreeNode p, TreeNode q) {
+    /**
+     * 使用了后序遍历
+     */
+    private boolean recurseTree(TreeNode currNode, TreeNode p, TreeNode q) {
         // If reached the end of a branch, return false.
-        if (currentNode == null) {
+        if (currNode == null) {
             return false;
         }
 
         // Left Recursion. If left recursion returns true, set left = 1 else 0
-        int left = this.recurseTree(currentNode.left, p, q) ? 1 : 0;
-
-        // Right Recursion
-        int right = this.recurseTree(currentNode.right, p, q) ? 1 : 0;
+        int left = this.recurseTree(currNode.left, p, q) ? 1 : 0;
+        int right = this.recurseTree(currNode.right, p, q) ? 1 : 0;
 
         // If the current node is one of p or q
-        int mid = (currentNode == p || currentNode == q) ? 1 : 0;
+        int root = (currNode == p || currNode == q) ? 1 : 0;
 
 
-        // If any two of the flags left, right or mid become True
-        if (mid + left + right >= 2) {
-            ans = currentNode;
+        // If any two of the flags left, right or root become True
+        if (root + left + right >= 2) {
+            ans = currNode;
         }
 
         // Return true if any one of the three bool values is True.
-        return (mid + left + right > 0);
+        return (root + left + right > 0);
     }
 }

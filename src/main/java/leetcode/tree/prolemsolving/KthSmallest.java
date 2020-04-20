@@ -13,8 +13,7 @@ import java.util.LinkedList;
 public class KthSmallest {
     public static void main(String[] args) {
         KthSmallest t = new KthSmallest();
-        int[] nums = {4, 2, 6, 1, 3, 5, 7};
-        TreeNode root = NodeUtil.createTree(nums);
+        TreeNode root = NodeUtil.instanceLevelOrder();
         ArrayList<Integer> inorder = t.inorder(root, new ArrayList<>());
         System.out.println(inorder);
         int out = t.byIter(root, 2);

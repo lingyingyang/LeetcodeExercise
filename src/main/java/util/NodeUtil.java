@@ -21,11 +21,16 @@ public class NodeUtil {
         return out.toString();
     }
 
-    public static TreeNode getInstance() {
+    public static TreeNode instanceSimple() {
         TreeNode root = new TreeNode(1);
         root.right = new TreeNode(2);
         root.right.left = new TreeNode(3);
         return root;
+    }
+
+    public static TreeNode instanceLevelOrder() {
+        int[] nums = {4, 2, 6, 1, 3, 5, 7};
+        return NodeUtil.createTree(nums);
     }
 
     public static void print(TreeNode root) {

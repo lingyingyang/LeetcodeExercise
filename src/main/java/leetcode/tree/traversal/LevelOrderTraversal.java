@@ -7,6 +7,27 @@ import java.util.List;
 import java.util.Queue;
 
 public class LevelOrderTraversal {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> ans = new LinkedList<>();
+        if (root == null) return ans;
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);//root放进queue里
+        while (!queue.isEmpty()) {
+            int levelNum = queue.size();//每层的node数量
+            List<Integer> level = new LinkedList<>();
+            for (int i = 0; i < levelNum; i++) {
+                TreeNode node = queue.poll();//取queue的head元素
+                //从左到右插入当前节点的下一层节点
+                if (node.left != null) queue.offer(node.left);
+                if (node.right != null) queue.offer(node.right);
+                level.add(node.val);
+            }
+            ans.add(level);
+        }
+        return ans;
+    }
+
     public TreeNode createTree(int[] nums) {
         TreeNode root = null;
         Queue<TreeNode> queue = new LinkedList<>();
@@ -41,29 +62,5 @@ public class LevelOrderTraversal {
         }
         q.offer(node);
         return root;
-    }
-
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> ans = new LinkedList<>();
-        if (root == null) return ans;
-
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);//root放进queue里
-        while (!queue.isEmpty()) {
-            int levelNum = queue.size();//每层的node数量
-//            for (TreeNode q : queue) {
-//                System.out.print(q.val + " ");
-//            }
-//            System.out.println();
-            List<Integer> subList = new LinkedList<>();
-            for (int i = 0; i < levelNum; i++) {
-                TreeNode node = queue.poll();//取queue的head元素
-                if (node.left != null) queue.offer(node.left);
-                if (node.right != null) queue.offer(node.right);
-                subList.add(node.val);
-            }
-            ans.add(subList);
-        }
-        return ans;
     }
 }

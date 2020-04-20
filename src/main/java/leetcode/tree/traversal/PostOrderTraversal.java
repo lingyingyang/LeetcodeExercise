@@ -20,9 +20,9 @@ public class PostOrderTraversal {
 
     private void recursionHelper(List<Integer> ans, TreeNode root) {
         if (root != null) {
-            recursionHelper(ans, root.left);
-            recursionHelper(ans, root.right);
-            ans.add(root.val);
+            recursionHelper(ans, root.left);//1 left node
+            recursionHelper(ans, root.right);//2 right node
+            ans.add(root.val);//3 root node
         }
     }
 

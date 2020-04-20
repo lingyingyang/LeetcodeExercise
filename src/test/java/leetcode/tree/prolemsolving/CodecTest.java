@@ -10,7 +10,7 @@ class CodecTest {
     @Test
     void test() {
         Codec test = new Codec();
-        String out = test.serialize(NodeUtil.getInstance());
+        String out = test.serialize(NodeUtil.instanceSimple());
         System.out.println(out);
         assertEquals("1,X,2,3,X,X,X,", out);
         TreeNode root = test.deserialize(out);
