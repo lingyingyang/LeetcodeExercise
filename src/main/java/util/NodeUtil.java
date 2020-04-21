@@ -36,8 +36,8 @@ public class NodeUtil {
     public static void print(TreeNode root) {
         LevelOrderTraversal traversal = new LevelOrderTraversal();
         List<List<Integer>> out = traversal.levelOrder(root);
-        for (List<Integer> list : out) {
-            System.out.println(list.toString());
+        for (List<Integer> level : out) {
+            System.out.println(level.toString());
         }
     }
 }
