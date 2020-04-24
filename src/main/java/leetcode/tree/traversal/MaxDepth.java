@@ -1,8 +1,8 @@
-package leetcode.tree.prolemsolving;
+package leetcode.tree.traversal;
 
 import leetcode.tree.TreeNode;
 
-public class FindMaxDepth {
+public class MaxDepth {
     private int ans;
 
     /**

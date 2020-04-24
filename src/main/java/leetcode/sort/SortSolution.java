@@ -26,13 +26,13 @@ class SortSolution {
     public void bubbleSort(int[] nums) {
         log.info("use bubbleSort()");
         for (int i = 0; i < nums.length; i++) {
-            int minIndex = i;
+            int minIdx = i;
             for (int j = i + 1; j < nums.length; j++) {
-                if (nums[j] < nums[minIndex]) {
-                    minIndex = j;
+                if (nums[j] < nums[minIdx]) {
+                    minIdx = j;
                 }
             }
-            swap(nums, i, minIndex);
+            swap(nums, i, minIdx);//最小的依次冒泡到区间首
         }
     }
 
@@ -41,26 +41,36 @@ class SortSolution {
         quickSort(nums, 0, nums.length - 1);
     }
 
-    private void quickSort(int[] nums, int low, int high) {
-        if (low >= high)
-            return;
-        int pivot = partition(nums, low, high);
-        quickSort(nums, low, pivot - 1);
-        quickSort(nums, pivot + 1, high);
+    private void quickSort(int[] nums, int head, int tail) {
+        if (head >= tail) return;
+
+        int pivot = partition(nums, head, tail);
+        quickSort(nums, head, pivot - 1);
+        quickSort(nums, pivot + 1, tail);
     }
 
-    private int partition(int[] nums, int low, int high) {
-        int q = low + (int) (Math.random() * (high - low + 1));
-        swap(nums, low, q);
+    /**
+     * nums[head..tail]闭区间划分出pivot
+     *
+     * @param nums
+     * @param head
+     * @param tail
+     * @return
+     */
+    private int partition(int[] nums, int head, int tail) {
+        int pivot = head + (int) (Math.random() * (tail - head + 1));
+        swap(nums, head, pivot);//把pivot放到区间首
 
-        int index = low + 1;
-        for (int i = low + 1; i <= high; i++) {
-            if (nums[i] < nums[low]) {
-                swap(nums, i, index++);
+        int idx = head + 1;
+        for (int i = head + 1; i <= tail; i++) {//遍历数组
+            if (nums[i] < nums[head]) {//如果值小于pivot，依次放到左边
+                swap(nums, i, idx++);
             }
         }
-        swap(nums, low, --index);
-        return index;
+        //把pivot放到中间
+        //这样左边的都小于pivot，右边的都大于pivot
+        swap(nums, head, --idx);
+        return idx;
     }
 
     public void mergeSort(int[] nums) {
@@ -68,35 +78,45 @@ class SortSolution {
         mergeSort(nums, 0, nums.length - 1);
     }
 
-    private void mergeSort(int[] nums, int low, int high) {
-        if (low >= high)
-            return;
-        int mid = (low + high) >>> 1;
-        mergeSort(nums, low, mid);
-        mergeSort(nums, mid + 1, high);
-        merge(nums, low, mid, mid + 1, high);
+    /**
+     * 拆分成nums[left..mid]和nums[mid+1..right]
+     *
+     * @param nums
+     * @param left
+     * @param right
+     */
+    private void mergeSort(int[] nums, int left, int right) {
+        if (left >= right) return;
+//        int mid = (left + right) >>> 1;
+        int mid = left + (right - left) / 2;
+        mergeSort(nums, left, mid);//nums[left..mid]
+        mergeSort(nums, mid + 1, right);//nums[mid+1..right]
+        merge(nums, left, mid, mid + 1, right);
     }
 
-    private void merge(int[] nums, int preLow, int preHigh, int endLow, int endHigh) {
-        if (preLow == endHigh) return;
-        int low = preLow;
-        int high = endHigh;
+    private void merge(int[] nums, int left1, int right1, int left2, int right2) {
+        if (left1 == right2) return;
+        int leftIdx = left1;
+        int rightIdx = right2;
 
-        int[] newArr = new int[preHigh - preLow + 1 + endHigh - endLow + 1];
+        int[] tmpArr = new int[right1 - left1 + 1 + right2 - left2 + 1];
         int index = 0;
-        while (preLow <= preHigh && endLow <= endHigh) {
-            newArr[index++] = (nums[preLow] < nums[endLow]) ? nums[preLow++] : nums[endLow++];
+        //2个数组之间比较，以left1和left2作为idx移动
+        while (left1 <= right1 && left2 <= right2) {
+            tmpArr[index++] = (nums[left1] < nums[left2])
+                    ? nums[left1++] : nums[left2++];
         }
-        while (preLow <= preHigh) {
-            newArr[index++] = nums[preLow++];
+        while (left1 <= right1) {//补齐数组1
+            tmpArr[index++] = nums[left1++];
         }
-        while (endLow <= endHigh) {
-            newArr[index++] = nums[endLow++];
+        while (left2 <= right2) {//补齐数组2
+            tmpArr[index++] = nums[left2++];
         }
 
+        //把tmpArr复制回去
         index = 0;
-        while (low <= high) {
-            nums[low++] = newArr[index++];
+        while (leftIdx <= rightIdx) {
+            nums[leftIdx++] = tmpArr[index++];
         }
     }
 

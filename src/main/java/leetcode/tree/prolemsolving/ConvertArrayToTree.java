@@ -6,7 +6,8 @@ import util.NodeUtil;
 public class ConvertArrayToTree {
     public static void main(String[] args) {
         int[] nums = {-10, -3, 0, 5, 9};
-        TreeNode root = new ConvertArrayToTree().sortedArrayToBST(nums);
+        ConvertArrayToTree t = new ConvertArrayToTree();
+        TreeNode root = t.sortedArrayToBST(nums);
         NodeUtil.print(root);
     }
 

@@ -6,6 +6,7 @@ import util.NodeUtil;
 public class MaxGain {
     public static void main(String[] args) {
         TreeNode root = NodeUtil.instanceLevelOrder();
+        NodeUtil.print(root);
         MaxGain t = new MaxGain();
         int out = t.maxPathSum(root);
         System.out.println(out);

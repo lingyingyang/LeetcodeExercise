@@ -1,15 +1,14 @@
 package leetcode.tree.traversal;
 
 import leetcode.tree.TreeNode;
-import leetcode.tree.prolemsolving.FindMaxDepth;
 import org.junit.jupiter.api.Test;
 import util.NodeUtil;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class FindMaxDepthTest {
+class MaxDepthTest {
 
-    private final FindMaxDepth test = new FindMaxDepth();
+    private final MaxDepth test = new MaxDepth();
 
     @Test
     void testPreOrder() {

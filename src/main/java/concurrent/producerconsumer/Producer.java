@@ -27,7 +27,7 @@ public class Producer implements Runnable {
             while (isRunning) {
                 Thread.sleep(r.nextInt(SLEEP_TIME));
                 int idx = count.getAndIncrement();
-                log.info("{} put into queue", idx);
+                log.info("Producer: {} put into queue", idx);
                 //提交数据到queue
                 if (!queue.offer(idx, 2, TimeUnit.SECONDS)) {
                     log.error("Failed to put data: {}", idx);

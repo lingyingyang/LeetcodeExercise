@@ -9,9 +9,9 @@ public class SearchInRotatedSortedArray {
         int minIdx = findMinIdx(nums); // binary search
         if (target == nums[minIdx]) return minIdx;
 
-        int m = nums.length;
-        int start = (target <= nums[m - 1]) ? minIdx : 0;
-        int end = (target > nums[m - 1]) ? minIdx : m - 1;
+        int len = nums.length;
+        int start = (target <= nums[len - 1]) ? minIdx : 0;
+        int end = (target > nums[len - 1]) ? minIdx : len - 1;
 
         while (start <= end) { // binary search twice
             int mid = start + (end - start) / 2;

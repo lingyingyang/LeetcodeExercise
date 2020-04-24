@@ -23,7 +23,7 @@ public class Consumer implements Runnable {
             while (isRunning) {
                 Integer value = queue.take();
                 int result = value * value;
-                log.info("{} * {} = {}", value, value, result);
+                log.info("Consumer: {} * {} = {}", value, value, result);
                 Thread.sleep(r.nextInt(SLEEP_TIME));
             }
         } catch (InterruptedException e) {

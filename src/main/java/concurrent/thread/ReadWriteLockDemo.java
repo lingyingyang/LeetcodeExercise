@@ -5,14 +5,19 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ReadWriteLockDemo {
-    private static ReentrantLock lock = new ReentrantLock();
-    private static ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
-    private static Lock readLock = readWriteLock.readLock();
-    private static Lock writeLock = readWriteLock.writeLock();
-    //与读写锁对比
-    private static boolean isReadWriteLock = true;
+    private static final ReentrantLock lock = new ReentrantLock();
+    private static final ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
+    private static final Lock readLock = readWriteLock.readLock();
+    private static final Lock writeLock = readWriteLock.writeLock();
+    /**
+     * ReentrantLock与读写锁对比<br/>
+     * true: 使用读写锁<br/>
+     * false：使用ReentrantLock
+     */
+    private static final boolean isReadWriteLock = true;
 
     public static void main(String[] args) {
+
         final ReadWriteLockDemo demo = new ReadWriteLockDemo();
         Runnable readRunnable = () -> {
             try {

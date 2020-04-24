@@ -25,6 +25,7 @@ public class MainClient {
             executor.execute(producer);
         }
         Thread.sleep(10000);
+        //优雅关闭
         for (Consumer consumer : consumers) {
             consumer.stop();
         }

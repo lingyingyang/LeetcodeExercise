@@ -9,7 +9,7 @@ import java.util.HashMap;
  */
 public class PathSum {
     public int pathSum(TreeNode root, int sum) {
-        HashMap<Integer, Integer> map = new HashMap();
+        HashMap<Integer, Integer> map = new HashMap<>();
         map.put(0, 1);
         int count = helper(root, 0, sum, map);
         map.forEach((k, v) -> {

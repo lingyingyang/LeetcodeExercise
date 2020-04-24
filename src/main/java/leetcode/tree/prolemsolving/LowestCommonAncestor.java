@@ -7,6 +7,7 @@ public class LowestCommonAncestor {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
         TreeNode root = NodeUtil.createTree(nums);
+        NodeUtil.print(root);
         LowestCommonAncestor t = new LowestCommonAncestor();
         TreeNode out = t.lowestCommonAncestor(root,
                 new TreeNode(9), new TreeNode(11));
@@ -37,7 +38,6 @@ public class LowestCommonAncestor {
 
         // If the current node is one of p or q
         int root = (currNode == p || currNode == q) ? 1 : 0;
-
 
         // If any two of the flags left, right or root become True
         if (root + left + right >= 2) {

@@ -33,10 +33,16 @@ public class PreOrderTraversal {
                 ans.add(currNode.val);
                 stack.push(currNode);
                 currNode = currNode.left;
-            } else { //currNode == null && !stack.isEmpty()
+            } else {
+                //currNode == null && !stack.isEmpty()时
+                //依次从stack pop出节点，
                 TreeNode node = stack.pop();
                 currNode = node.right;
             }
+            stack.forEach(item -> {
+                System.out.print(item.val + " ");
+            });
+            System.out.println();
         }
         return ans;
     }

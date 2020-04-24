@@ -38,6 +38,10 @@ public class InOrderTraversal {
                 ans.add(node.val);
                 currNode = node.right;
             }
+            stack.forEach(item -> {
+                System.out.print(item.val + " ");
+            });
+            System.out.println();
         }
         return ans;
     }

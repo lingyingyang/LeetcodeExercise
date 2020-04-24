@@ -7,7 +7,7 @@ public class BuildTreeWithPreInOrder {
         return helper(0, 0, inorder.length - 1, preorder, inorder);
     }
 
-    public TreeNode helper(int preStart, int inStart, int inEnd, int[] preorder, int[] inorder) {
+    private TreeNode helper(int preStart, int inStart, int inEnd, int[] preorder, int[] inorder) {
         if (preStart > preorder.length - 1 || inStart > inEnd) {
             return null;
         }
