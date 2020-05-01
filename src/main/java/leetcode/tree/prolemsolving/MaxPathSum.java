@@ -3,13 +3,15 @@ package leetcode.tree.prolemsolving;
 import leetcode.tree.TreeNode;
 import util.NodeUtil;
 
-public class MaxGain {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class MaxPathSum {
     public static void main(String[] args) {
         TreeNode root = NodeUtil.instanceLevelOrder();
         NodeUtil.print(root);
-        MaxGain t = new MaxGain();
+        MaxPathSum t = new MaxPathSum();
         int out = t.maxPathSum(root);
-        System.out.println(out);
+        assertEquals(22, out);
     }
 
     private int maxSum = Integer.MIN_VALUE;

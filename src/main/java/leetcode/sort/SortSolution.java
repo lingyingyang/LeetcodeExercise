@@ -64,7 +64,7 @@ class SortSolution {
         int idx = head + 1;
         for (int i = head + 1; i <= tail; i++) {//遍历数组
             if (nums[i] < nums[head]) {//如果值小于pivot，依次放到左边
-                swap(nums, i, idx++);
+                swap(nums, i, idx++);//双idx
             }
         }
         //把pivot放到中间

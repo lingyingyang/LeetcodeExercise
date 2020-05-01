@@ -27,7 +27,8 @@ public class PathSum {
         if (count == 1) System.out.println(String.format(
                 "count -> %d, currSum -> %d, currVal -> %d", count, currSum, root.val));
 
-        count += helper(root.left, currSum, target, map) + helper(root.right, currSum, target, map);
+        count += helper(root.left, currSum, target, map)
+                + helper(root.right, currSum, target, map);
 //        map.put(currSum, map.get(currSum) - 1);
         return count;
     }

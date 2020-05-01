@@ -12,15 +12,6 @@ public class NodeUtil {
         return t.createTree(nums);
     }
 
-    public static String print(ListNode root) {
-        StringBuffer out = new StringBuffer();
-        while (root != null) {
-            out.append(String.format("%d -> ", root.val));
-            root = root.next;
-        }
-        return out.toString();
-    }
-
     public static TreeNode instanceSimple() {
         TreeNode root = new TreeNode(1);
         root.right = new TreeNode(2);
@@ -30,7 +21,19 @@ public class NodeUtil {
 
     public static TreeNode instanceLevelOrder() {
         int[] nums = {4, 2, 6, 1, 3, 5, 7};
-        return NodeUtil.createTree(nums);
+        TreeNode root = NodeUtil.createTree(nums);
+        print(root);
+        return root;
+    }
+
+    public static String print(ListNode root) {
+        StringBuffer out = new StringBuffer();
+        while (root != null) {
+            out.append(String.format("%d -> ", root.val));
+            root = root.next;
+        }
+        System.out.println(out.toString());
+        return out.toString();
     }
 
     public static void print(TreeNode root) {
