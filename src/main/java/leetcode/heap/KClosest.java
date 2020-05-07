@@ -47,6 +47,7 @@ public class KClosest {
     }
 
     private static class DistanceComparator implements Comparator<Integer[]> {
+        @Override
         public int compare(Integer[] a, Integer[] b) {
             return Double.compare(Math.pow(b[0], 2) + Math.pow(b[1], 2),
                     Math.pow(a[0], 2) + Math.pow(a[1], 2));

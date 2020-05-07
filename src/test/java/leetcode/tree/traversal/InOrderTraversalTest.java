@@ -14,14 +14,14 @@ class InOrderTraversalTest {
 
     @Test
     void testRecursion() {
-        List<Integer> out = test.inOrderTraversalByRecursion(root);
+        List<Integer> out = test.inOrderTraversalByRecur(root);
         System.out.println(out);
         assertEquals("[1, 2, 3, 4, 5, 6, 7]", out.toString());
     }
 
     @Test
     void testIter() {
-        List<Integer> out = test.inOrderTraversalByIter(root);
+        List<Integer> out = test.inOrderTraversalByStack(root);
         assertEquals("[1, 2, 3, 4, 5, 6, 7]", out.toString());
     }
 }

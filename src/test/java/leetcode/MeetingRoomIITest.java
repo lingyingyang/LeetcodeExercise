@@ -2,7 +2,7 @@ package leetcode;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class MeetingRoomIITest {
     @Test
@@ -10,6 +10,6 @@ class MeetingRoomIITest {
         MeetingRoomII test = new MeetingRoomII();
         int[][] in = {{0, 30}, {5, 10}, {15, 20}};
         int out = test.minMeetingRooms(in);
-        assertEquals(2, out);
+        assertThat(out).isEqualTo(2);
     }
 }

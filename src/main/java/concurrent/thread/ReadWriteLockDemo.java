@@ -46,26 +46,26 @@ public class ReadWriteLockDemo {
         }
     }
 
-    public void handleRead(Lock lock) throws InterruptedException {
+    public void handleRead(Lock readLock) throws InterruptedException {
         try {
             //模拟读操作
-            lock.lock();
+            readLock.lockInterruptibly();
             System.out.println("Read Thread: " + Thread.currentThread().getName());
             //读操作的耗时越多，读写锁的优势就越明显
             Thread.sleep(2000);
         } finally {
-            lock.unlock();
+            readLock.unlock();
         }
     }
 
-    public void handleWrite(Lock lock) throws InterruptedException {
+    public void handleWrite(Lock writeLock) throws InterruptedException {
         try {
             //模拟写操作
-            lock.lock();
+            writeLock.lockInterruptibly();
             System.out.println("Write Thread: " + Thread.currentThread().getName());
             Thread.sleep(1000);
         } finally {
-            lock.unlock();
+            writeLock.unlock();
         }
     }
 }

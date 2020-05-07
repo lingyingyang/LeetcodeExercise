@@ -1,4 +1,4 @@
-package leetcode.stack;
+package leetcode.queuestack.stack;
 
 import java.util.HashMap;
 import java.util.Stack;

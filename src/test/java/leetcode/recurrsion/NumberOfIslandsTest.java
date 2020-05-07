@@ -1,8 +1,9 @@
 package leetcode.recurrsion;
 
+import leetcode.queuestack.stack.dfs.NumberOfIslands;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class NumberOfIslandsTest {
     @Test
