@@ -11,16 +11,16 @@ public class LevelOrderTraversal {
         List<List<Integer>> ans = new LinkedList<>();
         if (root == null) return ans;
 
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);//root放进queue里
-        while (!queue.isEmpty()) {
-            int levelNum = queue.size();//每层的node数量
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root);//root放进queue里
+        while (!q.isEmpty()) {
+            int levelNum = q.size();//每层的node数量
             List<Integer> level = new LinkedList<>();
             for (int i = 0; i < levelNum; i++) {
-                TreeNode node = queue.poll();//取queue的head元素
+                TreeNode node = q.poll();//取queue的head元素
                 //从左到右插入当前节点的下一层节点
-                if (node.left != null) queue.offer(node.left);
-                if (node.right != null) queue.offer(node.right);
+                if (node.left != null) q.offer(node.left);
+                if (node.right != null) q.offer(node.right);
                 level.add(node.val);
             }
             ans.add(level);

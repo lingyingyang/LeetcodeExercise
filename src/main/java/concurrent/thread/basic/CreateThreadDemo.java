@@ -1,6 +1,6 @@
-package concurrent.thread;
+package concurrent.thread.basic;
 
-public class ThreadDemo {
+public class CreateThreadDemo {
     static void pong() {
         System.out.print("pong");
     }
@@ -11,13 +11,13 @@ public class ThreadDemo {
     }
 
     private static void startMethod() {
-        Thread t = new Thread(ThreadDemo::pong);
+        Thread t = new Thread(CreateThreadDemo::pong);
         t.start();
         System.out.print("ping");
     }
 
     private static void runMethod() {
-        Thread t = new Thread(ThreadDemo::pong);
+        Thread t = new Thread(CreateThreadDemo::pong);
         t.run();
         System.out.print("ping");
     }

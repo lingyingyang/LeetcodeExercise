@@ -7,13 +7,6 @@ import java.util.concurrent.*;
 
 @Slf4j
 public class ThreadLocalDemo {
-    public static final int GEN_COUNT = 10000000;
-    public static final int THREAD_AMT = 4;
-    static ExecutorService executor = Executors.newFixedThreadPool(THREAD_AMT);
-    public static Random random = new Random(123);
-    public static ThreadLocal<Random> randomThreadLocal =
-            ThreadLocal.withInitial(() -> new Random(123));
-
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         Future<Long>[] futures = new Future[THREAD_AMT];
         for (int i = 0; i < THREAD_AMT; i++) {
@@ -37,8 +30,14 @@ public class ThreadLocalDemo {
         executor.shutdown();
     }
 
+    public static final int GEN_COUNT = 10000000;
+    public static final int THREAD_AMT = 4;
+    public static Random random = new Random(123);
+    public static ThreadLocal<Random> randomThreadLocal = ThreadLocal.withInitial(() -> new Random(123));
+    static ExecutorService executor = Executors.newFixedThreadPool(THREAD_AMT);
+
     public static class RandomTask implements Callable<Long> {
-        private int mode = 0;
+        private final int mode;
 
         public RandomTask(int mode) {
             this.mode = mode;

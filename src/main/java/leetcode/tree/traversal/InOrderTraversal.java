@@ -25,6 +25,12 @@ public class InOrderTraversal {
         dfsHelper(ans, root.right);
     }
 
+    /**
+     * 左中右，左子树先入栈，然后到边界左先出栈，再中，再到右子树
+     *
+     * @param root
+     * @return
+     */
     public List<Integer> inOrderTraversalByStack(TreeNode root) {
         List<Integer> ans = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();

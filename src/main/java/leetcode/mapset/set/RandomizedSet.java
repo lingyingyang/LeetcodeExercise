@@ -1,4 +1,4 @@
-package leetcode.mapset;
+package leetcode.mapset.set;
 
 import java.util.*;
 

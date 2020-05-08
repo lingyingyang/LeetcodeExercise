@@ -4,13 +4,16 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class IntersectionOfTwoArrays {
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class IntersectOfTwoArrays {
     public static void main(String[] args) {
         int[] nums1 = {1, 2, 2, 1};
         int[] nums2 = {2, 2, 3};
-        IntersectionOfTwoArrays t = new IntersectionOfTwoArrays();
+        IntersectOfTwoArrays t = new IntersectOfTwoArrays();
         int[] out = t.intersect(nums1, nums2);
-        System.out.println(Arrays.toString(out));//2, 2
+        System.out.println(Arrays.toString(out));
+        assertThat(Arrays.toString(out)).isEqualTo("[2, 2]");
     }
 
     public int[] intersect(int[] nums1, int[] nums2) {

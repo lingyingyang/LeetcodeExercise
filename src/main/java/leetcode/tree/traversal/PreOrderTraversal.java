@@ -17,11 +17,11 @@ public class PreOrderTraversal {
     }
 
     private void recursionHelper(List<Integer> ans, TreeNode root) {
-        if (root != null) {
-            ans.add(root.val);
-            recursionHelper(ans, root.left);
-            recursionHelper(ans, root.right);
-        }
+        if (root == null) return;
+
+        ans.add(root.val);
+        recursionHelper(ans, root.left);
+        recursionHelper(ans, root.right);
     }
 
     public List<Integer> preOrderTraversalByIter(TreeNode root) {
