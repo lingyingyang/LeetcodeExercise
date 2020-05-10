@@ -1,6 +1,4 @@
-package leetcode.list;
-
-import leetcode.tree.ListNode;
+package leetcode.linkedlist;
 
 import java.util.Comparator;
 import java.util.List;

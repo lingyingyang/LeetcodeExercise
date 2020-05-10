@@ -1,12 +1,23 @@
 package util;
 
-import leetcode.tree.ListNode;
+import leetcode.linkedlist.ListNode;
+import leetcode.linkedlist.multidual.Node;
 import leetcode.tree.TreeNode;
 import leetcode.tree.traversal.LevelOrderTraversal;
 
 import java.util.List;
 
 public class NodeUtil {
+    public static ListNode createListNode(int[] nums) {
+        ListNode curr = new ListNode(-1);
+        ListNode dump = curr;
+        for (int num : nums) {
+            curr.next = new ListNode(num);
+            curr = curr.next;//idx移到下一位
+        }
+        return dump.next;
+    }
+
     public static TreeNode createTree(int[] nums) {
         LevelOrderTraversal t = new LevelOrderTraversal();
         return t.createTree(nums);
@@ -27,6 +38,16 @@ public class NodeUtil {
     }
 
     public static String print(ListNode root) {
+        StringBuffer out = new StringBuffer();
+        while (root != null) {
+            out.append(String.format("%d -> ", root.val));
+            root = root.next;
+        }
+        System.out.println(out.toString());
+        return out.toString();
+    }
+
+    public static String print(Node root) {
         StringBuffer out = new StringBuffer();
         while (root != null) {
             out.append(String.format("%d -> ", root.val));

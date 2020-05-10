@@ -3,7 +3,7 @@ package concurrent.thread.basic;
 import lombok.Data;
 
 /**
- * 写坏了对象
+ * 写坏了对象，对比{@link InterruptDemo}
  */
 public class StopThreadUnsafeDemo {
     public static void main(String[] args) throws InterruptedException {

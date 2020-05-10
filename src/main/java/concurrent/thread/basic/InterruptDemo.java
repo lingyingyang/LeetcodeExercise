@@ -1,7 +1,7 @@
 package concurrent.thread.basic;
 
 /**
- * 中断线程，可防止写坏数据，与StopThreadUnsafeDemo比较
+ * 中断线程，可防止写坏数据，对比{@link StopThreadUnsafeDemo}
  */
 public class InterruptDemo {
     public static void main(String[] args) throws InterruptedException {

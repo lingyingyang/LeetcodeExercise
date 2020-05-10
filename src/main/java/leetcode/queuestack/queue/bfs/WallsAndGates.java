@@ -53,6 +53,7 @@ public class WallsAndGates {
                 //非空房间，跳过
                 if (nextRow < 0 || nextCol < 0 || nextRow >= rows || nextCol >= cols || rooms[nextRow][nextCol] != EMPTY)
                     continue;
+                System.out.println(nextRow + " - " + nextCol);
                 //房间与当前point的距离+1，然后放进队列中，进行下一次的bfs
                 rooms[nextRow][nextCol] = rooms[row][col] + 1;
                 q.add(new int[]{nextRow, nextCol});

@@ -1,4 +1,4 @@
-package leetcode.list;
+package leetcode.arrays;
 
 import java.util.Arrays;
 import java.util.concurrent.locks.ReentrantLock;

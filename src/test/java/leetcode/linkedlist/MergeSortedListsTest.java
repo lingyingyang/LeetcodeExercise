@@ -1,14 +1,13 @@
-package leetcode.list;
+package leetcode.linkedlist;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import leetcode.tree.ListNode;
 import util.NodeUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Slf4j
 class MergeSortedListsTest {

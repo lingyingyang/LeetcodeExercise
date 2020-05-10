@@ -1,6 +1,5 @@
-package leetcode.list;
+package leetcode.linkedlist;
 
-import leetcode.tree.ListNode;
 import util.NodeUtil;
 
 public class ReverseList {
@@ -17,10 +16,10 @@ public class ReverseList {
         ListNode prev = null;
         ListNode curr = head;
         while (curr != null) {
-            ListNode nextTemp = curr.next;
+            ListNode nextTmp = curr.next;
             curr.next = prev;
             prev = curr;
-            curr = nextTemp;
+            curr = nextTmp;
         }
         return prev;
     }
