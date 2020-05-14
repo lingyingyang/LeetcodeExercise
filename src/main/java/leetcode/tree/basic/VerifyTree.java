@@ -1,4 +1,4 @@
-package leetcode.tree.prolemsolving;
+package leetcode.tree.basic;
 
 import leetcode.tree.TreeNode;
 

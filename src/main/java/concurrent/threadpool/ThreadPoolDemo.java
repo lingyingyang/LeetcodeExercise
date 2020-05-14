@@ -25,7 +25,11 @@ public class ThreadPoolDemo {
 //            });
             tasks.add(new MyTask(amt.getAndIncrement()));
         }
-        tasks.add(new MyTaskTimeOut());
+        MyTaskTimeOut taskTimeOut = new MyTaskTimeOut();
+        //taskTimeOut#call被不同的线程同时调用
+        tasks.add(taskTimeOut);
+        tasks.add(taskTimeOut);
+        tasks.add(taskTimeOut);
 
         List<Future<String>> futures = null;
         try {
@@ -38,7 +42,10 @@ public class ThreadPoolDemo {
 
         if (futures != null) {
             for (Future<String> future : futures) {
-                log.info("{} isCancelled => {}", future.toString(), future.isCancelled());
+                if (future.isCancelled()) {
+                    log.info("{} isCancelled => {}, then can do something to handle the timeout exception",
+                            future.toString(), future.isCancelled());
+                }
             }
         }
     }
@@ -47,8 +54,8 @@ public class ThreadPoolDemo {
 
         @Override
         public String call() throws Exception {
-            log.info("MyTaskTimeOut begin");
-            Thread.sleep(5000);
+            log.info("MyTaskTimeOut begin: {}", Thread.currentThread().getName());
+            Thread.sleep(5000);//所有MyTaskTimeOut都会超时被丢弃
             log.info("MyTaskTimeOut end");
             return "Finish";
         }

@@ -14,7 +14,10 @@ public class ThreadPoolTimeOutDemo {
         futures.add(executor.submit(new MyTask(1)));
         futures.add(executor.submit(new MyTask(2)));
         futures.add(executor.submit(new MyTask(3)));
-        futures.add(executor.submit(new MyTaskTimeOut()));
+        MyTaskTimeOut taskTimeOut = new MyTaskTimeOut();
+        futures.add(executor.submit(taskTimeOut));
+        futures.add(executor.submit(taskTimeOut));
+        futures.add(executor.submit(taskTimeOut));
 
         for (Future<String> future : futures) {
             try {
@@ -36,7 +39,7 @@ public class ThreadPoolTimeOutDemo {
 
         public String call() throws Exception {
             log.info("MyTaskTimeOut begin");
-            Thread.sleep(5000);
+            Thread.sleep(5000);//所有MyTaskTimeOut都会超时被丢弃
             log.info("MyTaskTimeOut end");
             return "Finish";
         }
