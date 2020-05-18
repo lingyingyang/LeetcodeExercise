@@ -15,10 +15,10 @@ public class SearchBST {
     private TreeNode ans;
 
     public TreeNode searchBST(TreeNode root, int val) {
-//        inorderHelper(root, val);
-//        return ans;
+        inorderHelper(root, val);
+        return ans;
 
-        return inorderIter(root, val);
+//        return inorderIter(root, val);
     }
 
     private void inorderHelper(TreeNode root, int val) {

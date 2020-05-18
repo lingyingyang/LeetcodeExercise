@@ -22,13 +22,11 @@ public class DeleteNode {
                 root = null;
             } else if (root.right != null) {//有右子树的时候
                 //找后继节点并替换当前节点，然后删除后继节点
-                TreeNode successor = successor(root);
-                root.val = successor.val;
+                root.val = successor(root).val;
                 root.right = deleteNode(root.right, root.val);
             } else /*if (root.left != null)*/ {//只有左子树的时候
                 //找前继节点并替换当前节点，然后删除前继节点
-                TreeNode predecessor = predecessor(root);
-                root.val = predecessor.val;
+                root.val = predecessor(root).val;
                 root.left = deleteNode(root.left, root.val);
             }
         }
