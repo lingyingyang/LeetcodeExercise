@@ -71,6 +71,8 @@ public class GuavaFutureDemo {
                 log.info("杯子洗不了，没有茶喝了");
             }
         }, gPool);
+
+        System.out.println(mainThread.getName() + "退出了===================");
     }
 
     //泡茶线程

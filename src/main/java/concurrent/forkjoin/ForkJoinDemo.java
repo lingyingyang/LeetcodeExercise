@@ -7,6 +7,7 @@ import java.util.concurrent.RecursiveTask;
 
 /**
  * 这是一个简单的Join/Fork计算过程，将1—1001数字相加
+ * Fork是子进程
  */
 public class ForkJoinDemo {
 
@@ -51,8 +52,10 @@ public class ForkJoinDemo {
             // 否则再进行任务拆分，拆分成两个任务
             else {
                 MyForkJoinTask subTask1 = new MyForkJoinTask(startValue, (startValue + endValue) / 2);
+                System.out.println(subTask1.toString());
                 subTask1.fork();
                 MyForkJoinTask subTask2 = new MyForkJoinTask((startValue + endValue) / 2 + 1, endValue);
+                System.out.println(subTask2.toString());
                 subTask2.fork();
                 return subTask1.join() + subTask2.join();
             }
