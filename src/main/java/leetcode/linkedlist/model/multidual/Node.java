@@ -1,4 +1,4 @@
-package leetcode.linkedlist.multidual;
+package leetcode.linkedlist.model.multidual;
 
 // Definition for a Node.
 public class Node {

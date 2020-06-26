@@ -2,17 +2,18 @@ package leetcode.mapset.set;
 
 import java.util.*;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class RandomizedSet {
     public static void main(String[] args) {
         RandomizedSet t = new RandomizedSet();
-        t.insert(51);
-        t.insert(2);
-        t.insert(10);
-        t.insert(63);
-        t.insert(57);
-        System.out.println(t.getRandom());
-        t.remove(2);
-        System.out.println(t.getRandom());
+        assertTrue(t.insert(1));
+        assertFalse(t.remove(2));
+        assertTrue(t.insert(2));
+        assertEquals(2, t.getRandom());
+        assertTrue(t.remove(1));
+        assertFalse(t.insert(2));
+        assertEquals(2, t.getRandom());
     }
 
     /**
@@ -37,8 +38,8 @@ public class RandomizedSet {
     public boolean insert(int val) {
         if (dict.containsKey(val)) return false;
 
-        list.add(list.size(), val);
         dict.put(val, list.size());
+        list.add(list.size(), val);
         return true;
     }
 

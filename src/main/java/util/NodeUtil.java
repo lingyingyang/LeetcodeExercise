@@ -1,7 +1,7 @@
 package util;
 
 import leetcode.linkedlist.ListNode;
-import leetcode.linkedlist.multidual.Node;
+import leetcode.linkedlist.model.multidual.Node;
 import leetcode.tree.TreeNode;
 import leetcode.tree.traversal.LevelOrderTraversal;
 

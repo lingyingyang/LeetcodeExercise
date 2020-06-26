@@ -27,7 +27,6 @@ public class MaxPathSum {
     private int maxGain(TreeNode node) {
         if (node == null) return 0;
 
-        // max sum on the left and right sub-trees of node
         int leftGain = Math.max(maxGain(node.left), 0);
         int rightGain = Math.max(maxGain(node.right), 0);
 
@@ -37,7 +36,6 @@ public class MaxPathSum {
         // update max_sum if it's better to start a new path
         maxSum = Math.max(maxSum, priceNewPath);
 
-        // for recursion :
         // 如果回溯到上一层，返回最大的路径
         return node.val + Math.max(leftGain, rightGain);
     }
