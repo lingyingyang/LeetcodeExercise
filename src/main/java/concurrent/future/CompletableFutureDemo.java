@@ -7,34 +7,38 @@ public class CompletableFutureDemo {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         final CompletableFuture<Integer> future = new CompletableFuture<>();
         new Thread(new AskThread(future)).start();
-        //模拟长时间的计算过程
+        // 模拟长时间的计算过程
         Thread.sleep(2000);
-        //告知完成结果
+        // 告知完成结果
         future.complete(60);
 
-        //另外一个例子
-        final CompletableFuture<Integer> future1 = CompletableFuture.supplyAsync(
-                () -> calculate(50)).exceptionally(
-                ex -> {
-                    ex.printStackTrace();
-                    return 0;
-                });
-        final CompletableFuture<Void> future2 = CompletableFuture.runAsync(() -> {
-            System.out.println(Thread.currentThread().getName() + " start!");
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        });
+        // 另外一个例子
+        final CompletableFuture<Integer> future1 =
+                CompletableFuture.supplyAsync( // 可以有返回值
+                        () -> calculate(50))
+                                 .exceptionally(
+                                         ex -> {
+                                             ex.printStackTrace();
+                                             return 0;
+                                         });
+        final CompletableFuture<Void> future2 =
+                CompletableFuture.runAsync( // 没有返回值
+                        () -> {
+                            System.out.println(Thread.currentThread().getName() + " start!");
+                            try {
+                                Thread.sleep(2000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        });
         System.out.println(future1.get());
         System.out.println(future2.get());
     }
 
     private static Integer calculate(Integer in) {
-        //默认ForkJoinPool.commonPool来执行
+        // 默认ForkJoinPool.commonPool来执行
         System.out.println(Thread.currentThread().getName() + " start!");
-        //模拟长时间的计算过程
+        // 模拟长时间的计算过程
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
