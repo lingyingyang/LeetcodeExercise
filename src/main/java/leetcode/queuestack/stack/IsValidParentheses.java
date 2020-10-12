@@ -33,7 +33,7 @@ public class IsValidParentheses {
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
 
-            if (mappings.containsKey(c)) {//如果是闭括号
+            if (mappings.containsKey(c)) { // 如果是闭括号
 
                 // Get the top element of the stack. If the stack is empty, set a dummy value of '#'
                 char topElement = stack.empty() ? '#' : stack.pop();
@@ -42,7 +42,7 @@ public class IsValidParentheses {
                 if (topElement != mappings.get(c)) {
                     return false;
                 }
-            } else {//如果是开括号，放入stack
+            } else { // 如果是开括号，放入stack
                 stack.push(c);
             }
         }

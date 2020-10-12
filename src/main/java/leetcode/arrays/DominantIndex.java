@@ -14,8 +14,8 @@ public class DominantIndex {
         if (nums.length == 0) return -1;
         if (nums.length == 1) return 0;
 
-        PriorityQueue<int[]/*[idx,value]*/> maxHeap = new PriorityQueue<>(2,
-                Comparator.comparingInt(o -> o[1]));
+        PriorityQueue<int[] /*[idx,value]*/> maxHeap =
+                new PriorityQueue<>(2, Comparator.comparingInt(o -> o[1]));
         for (int i = 0; i < nums.length; i++) {
             maxHeap.offer(new int[]{i, nums[i]});
             if (maxHeap.size() > 2) maxHeap.poll();

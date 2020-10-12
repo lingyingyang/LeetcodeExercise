@@ -15,9 +15,9 @@ public class InsertIntoBST {
     public TreeNode insertIntoBST(TreeNode root, int val) {
         if (root == null) return new TreeNode(val);
 
-        if (val < root.val) {//去左子树
+        if (val < root.val) { // 去左子树
             root.left = insertIntoBST(root.left, val);
-        } else {//去右子树
+        } else { // 去右子树
             root.right = insertIntoBST(root.right, val);
         }
         return root;
@@ -26,18 +26,18 @@ public class InsertIntoBST {
     public TreeNode insertIntoBSTByIter(TreeNode root, int val) {
         TreeNode curr = root;
         while (curr != null) {
-            if (val < curr.val) {//去左子树
-                if (curr.left == null) { //找到插入的节点
+            if (val < curr.val) { // 去左子树
+                if (curr.left == null) { // 找到插入的节点
                     curr.left = new TreeNode(val);
                     return root;
                 } else curr = curr.left;
-            } else {//去右子树
-                if (curr.right == null) {//找到插入的节点
+            } else { // 去右子树
+                if (curr.right == null) { // 找到插入的节点
                     curr.right = new TreeNode(val);
                     return root;
                 } else curr = curr.right;
             }
         }
-        return new TreeNode(val);//当root为null的情况
+        return new TreeNode(val); // 当root为null的情况
     }
 }

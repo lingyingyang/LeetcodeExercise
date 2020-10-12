@@ -21,7 +21,7 @@ public class TailRecursion {
         return helper_non_tail_recursion(0, ls);
     }
 
-    //---------------------------------------------
+    // ---------------------------------------------
 
     private static int helper_tail_recursion(int start, int[] ls, int acc) {
         if (start >= ls.length) {

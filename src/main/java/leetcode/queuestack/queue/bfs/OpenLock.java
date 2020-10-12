@@ -21,7 +21,7 @@ public class OpenLock {
     public int openLock(String[] deadends, String target) {
         Set<String> deads = new HashSet<>(Arrays.asList(deadends));
         Set<String> seen = new HashSet<>();
-        int level = 0;//用null作为delimiter可以得知这层是否结束了
+        int level = 0; // 用null作为delimiter可以得知这层是否结束了
         int count = 0;
 
         LinkedList<String> q = new LinkedList<>();
@@ -31,7 +31,7 @@ public class OpenLock {
             count++;
             String point = q.poll();
             if (point == null) {
-                //层数+1，并且如果q还有的话，加下一层的delimiter
+                // 层数+1，并且如果q还有的话，加下一层的delimiter
                 level++;
                 if (q.peek() != null) q.offer(null);
             } else if (point.equals(target)) {
@@ -39,8 +39,8 @@ public class OpenLock {
                 return level;
             } else {
                 for (int dimension = 0; dimension < 4; dimension++) {
-                    for (int direction : DIRECTIONS) {//四个维度各2个方向bfs
-                        int val = ((point.charAt(dimension) - '0') + direction + 10) % 10;//使得0-9是一个环
+                    for (int direction : DIRECTIONS) { // 四个维度各2个方向bfs
+                        int val = ((point.charAt(dimension) - '0') + direction + 10) % 10; // 使得0-9是一个环
                         String next = point.substring(0, dimension) + val + point.substring(dimension + 1);
                         if (!deads.contains(point) && !seen.contains(next)) {
                             q.offer(next);

@@ -23,10 +23,8 @@ public class EightyFour {
         int rewardScore = 0;
 
         char[] chs = line.toCharArray();
-        if (chs.length <= 4)
-            lenScore = 5;
-        else if (chs.length <= 7)
-            lenScore = 10;
+        if (chs.length <= 4) lenScore = 5;
+        else if (chs.length <= 7) lenScore = 10;
         else lenScore = 25;
 
         int numberCount = 0;
@@ -34,58 +32,38 @@ public class EightyFour {
         int upperCount = 0;
         int otherCount = 0;
         for (char ch : chs) {
-            if (ch >= 'a' && ch <= 'z')
-                ++lowerCount;
-            else if (ch >= 'A' && ch <= 'Z')
-                ++upperCount;
-            else if (ch >= '0' && ch <= '9')
-                ++numberCount;
-            else
-                ++otherCount;
+            if (ch >= 'a' && ch <= 'z') ++lowerCount;
+            else if (ch >= 'A' && ch <= 'Z') ++upperCount;
+            else if (ch >= '0' && ch <= '9') ++numberCount;
+            else ++otherCount;
         }
 
-        if (numberCount == 0)
-            numScore = 0;
-        else if (numberCount == 1)
-            numScore = 10;
-        else
-            numScore = 20;
+        if (numberCount == 0) numScore = 0;
+        else if (numberCount == 1) numScore = 10;
+        else numScore = 20;
 
-        if (lowerCount == 0 && upperCount == 0)
-            charScore = 0;
+        if (lowerCount == 0 && upperCount == 0) charScore = 0;
         else if ((lowerCount != 0 && upperCount == 0) || (lowerCount == 0 && upperCount != 0))
             charScore = 10;
-        else
-            charScore = 20;
+        else charScore = 20;
 
-        if (otherCount == 0)
-            otherScore = 0;
-        else if (otherCount == 1)
-            otherScore = 10;
-        else
-            otherScore = 25;
+        if (otherCount == 0) otherScore = 0;
+        else if (otherCount == 1) otherScore = 10;
+        else otherScore = 25;
 
-        if (lowerCount > 0 && upperCount > 0 && numberCount > 0 && otherCount > 0)
-            rewardScore = 5;
+        if (lowerCount > 0 && upperCount > 0 && numberCount > 0 && otherCount > 0) rewardScore = 5;
         else if ((lowerCount > 0 || upperCount > 0) && numberCount > 0 && otherCount > 0)
             rewardScore = 3;
-        else if ((lowerCount > 0 || upperCount > 0) && numberCount > 0)
-            rewardScore = 2;
+        else if ((lowerCount > 0 || upperCount > 0) && numberCount > 0) rewardScore = 2;
 
         int sumGriad = lenScore + numScore + charScore + otherScore + rewardScore;
 
-        if (sumGriad >= 90)
-            System.out.println("VERY_SECURE");
-        else if (sumGriad >= 80)
-            System.out.println("SECURE");
-        else if (sumGriad >= 70)
-            System.out.println("VERY_STRONG");
-        else if (sumGriad >= 60)
-            System.out.println("STRONG");
-        else if (sumGriad >= 50)
-            System.out.println("AVERAGE");
-        else if (sumGriad >= 20)
-            System.out.println("WEAK");
+        if (sumGriad >= 90) System.out.println("VERY_SECURE");
+        else if (sumGriad >= 80) System.out.println("SECURE");
+        else if (sumGriad >= 70) System.out.println("VERY_STRONG");
+        else if (sumGriad >= 60) System.out.println("STRONG");
+        else if (sumGriad >= 50) System.out.println("AVERAGE");
+        else if (sumGriad >= 20) System.out.println("WEAK");
         else System.out.println("VERY_WEAK");
     }
 }

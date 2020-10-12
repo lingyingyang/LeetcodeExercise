@@ -21,11 +21,9 @@ public class NinetyFour {
                 if (temp > 0) {
                     ++positiveCount;
                     positiveSum += temp;
-                } else if (temp < 0)
-                    ++negativeCount;
+                } else if (temp < 0) ++negativeCount;
             }
             System.out.printf("%d %.1f\n", negativeCount, positiveSum * 1.0 / positiveCount);
         }
-
     }
 }

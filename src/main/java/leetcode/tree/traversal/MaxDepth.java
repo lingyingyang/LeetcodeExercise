@@ -21,7 +21,7 @@ public class MaxDepth {
         if (root == null) {
             return;
         }
-        if (root.left == null && root.right == null) {// 叶子节点
+        if (root.left == null && root.right == null) { // 叶子节点
             ans = Math.max(ans, depth);
         }
         preOrderHelper(root.left, depth + 1);
@@ -43,7 +43,7 @@ public class MaxDepth {
 
     public int byIter(TreeNode root) {
         if (root == null) return 0;
-        LinkedList<Pair<TreeNode, Integer/*depth*/>> stack = new LinkedList<>();
+        LinkedList<Pair<TreeNode, Integer /*depth*/>> stack = new LinkedList<>();
         stack.add(new Pair<>(root, 1));
 
         int depth = 0;
@@ -51,7 +51,7 @@ public class MaxDepth {
             Pair<TreeNode, Integer> point = stack.poll();
             root = point.getKey();
             int currDepth = point.getValue();
-            if (root != null) {//2个方向
+            if (root != null) { // 2个方向
                 depth = Math.max(depth, currDepth);
                 stack.add(new Pair<>(root.left, currDepth + 1));
                 stack.add(new Pair<>(root.right, currDepth + 1));

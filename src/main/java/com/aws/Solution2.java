@@ -13,12 +13,13 @@ public class Solution2 {
         list.add(s2);
         list.sort(Comparator.comparing(s -> s));
         System.out.println(list.toString());
-//        System.out.println(s1.compareTo(s2));
+        //        System.out.println(s1.compareTo(s2));
 
-//        Solution2 t = new Solution2();
-//        List<String> logLines = Arrays.asList("a1 aaa ss", "mi2 dd bb cc", "wz3 11 22", "x4 55 66");
-//        List<String> out = t.reorderLines(4, logLines);
-//        System.out.println(out.toString());
+        //        Solution2 t = new Solution2();
+        //        List<String> logLines = Arrays.asList("a1 aaa ss", "mi2 dd bb cc", "wz3 11 22", "x4 55
+        // 66");
+        //        List<String> out = t.reorderLines(4, logLines);
+        //        System.out.println(out.toString());
     }
 
     // METHOD SIGNATURE BEGINS, THIS METHOD IS REQUIRED

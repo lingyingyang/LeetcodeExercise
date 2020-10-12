@@ -24,9 +24,14 @@ public class FortyEight {
                 if (i == 0 && line.charAt(i) == '-') {
                     isN = true;
                     ++i;
-                } else if (line.charAt(i) == '-' && (line.charAt(i - 1) == '-' || line.charAt(i - 1) == '+'
-                        || line.charAt(i - 1) == '*' || line.charAt(i - 1) == '/' || line.charAt(i - 1) == '('
-                        || line.charAt(i - 1) == '[' || line.charAt(i - 1) == '{')) {
+                } else if (line.charAt(i) == '-'
+                        && (line.charAt(i - 1) == '-'
+                        || line.charAt(i - 1) == '+'
+                        || line.charAt(i - 1) == '*'
+                        || line.charAt(i - 1) == '/'
+                        || line.charAt(i - 1) == '('
+                        || line.charAt(i - 1) == '['
+                        || line.charAt(i - 1) == '{')) {
                     isN = true;
                     ++i;
                 }

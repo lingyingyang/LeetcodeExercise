@@ -12,39 +12,40 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 public class LocalCacheExample {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        //create a cache for employees based on their employee id
-        LoadingCache<String, Employee> employeeCache =
-                CacheBuilder.newBuilder()
-                            .maximumSize(100)                             // maximum 100 records can be cached
-                            .expireAfterAccess(30, TimeUnit.MINUTES)      // cache will expire after 30 minutes of access
-                            .build(new CacheLoader<String, Employee>() {  // build the cacheloader
-                                @Override
-                                public Employee load(String empId) throws Exception {
-                                    //make the expensive call
-                                    return getFromDatabase(empId);
-                                }
-                            });
+      // create a cache for employees based on their employee id
+      LoadingCache<String, Employee> employeeCache =
+              CacheBuilder.newBuilder()
+                          .maximumSize(100) // maximum 100 records can be cached
+                          .expireAfterAccess(30, TimeUnit.MINUTES) // cache will expire after 30 minutes of access
+                          .build(
+                                  new CacheLoader<String, Employee>() { // build the cacheloader
+                                      @Override
+                                      public Employee load(String empId) throws Exception {
+                                          // make the expensive call
+                                          return getFromDatabase(empId);
+                                      }
+                                  });
 
-        try {
-            //on first invocation, cache will be populated with corresponding
-            //employee record
-            System.out.println("Invocation #1");
-            System.out.println(employeeCache.get("100"));
-            System.out.println(employeeCache.get("103"));
-            System.out.println(employeeCache.get("110"));
+      try {
+          // on first invocation, cache will be populated with corresponding
+          // employee record
+          System.out.println("Invocation #1");
+          System.out.println(employeeCache.get("100"));
+          System.out.println(employeeCache.get("103"));
+          System.out.println(employeeCache.get("110"));
 
-            //second invocation, data will be returned from cache
-            System.out.println("Invocation #2");
-            System.out.println(employeeCache.get("100"));
-            System.out.println(employeeCache.get("103"));
-            System.out.println(employeeCache.get("110"));
+          // second invocation, data will be returned from cache
+          System.out.println("Invocation #2");
+          System.out.println(employeeCache.get("100"));
+          System.out.println(employeeCache.get("103"));
+          System.out.println(employeeCache.get("110"));
 
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-    }
+      } catch (ExecutionException e) {
+          e.printStackTrace();
+      }
+  }
 
     private static Employee getFromDatabase(String empId) {
 

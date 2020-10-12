@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 public class EightTwo {
     public static int getLongestStr(String str) {
         int maxLen = -1;
-        //奇数
+        // 奇数
         for (int i = 0; i < str.length(); ++i) {
             int j = i - 1;
             maxLen = get(str, maxLen, i, j);

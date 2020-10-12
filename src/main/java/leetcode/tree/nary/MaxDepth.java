@@ -23,10 +23,10 @@ public class MaxDepth {
     }
 
     public int maxDepth(Node root) {
-//        preorderHelper(root, 1);
-//        return ans;
+        //        preorderHelper(root, 1);
+        //        return ans;
 
-//        return postorderHelper(root);
+        //        return postorderHelper(root);
 
         return byStack(root);
     }
@@ -41,7 +41,7 @@ public class MaxDepth {
      */
     private void preorderHelper(Node root, int depth) {
         if (root == null) return;
-        if (root.children == null) {//叶子节点
+        if (root.children == null) { // 叶子节点
             ans = Math.max(ans, depth);
             return;
         }
@@ -50,7 +50,6 @@ public class MaxDepth {
             preorderHelper(child, depth + 1);
         }
     }
-
 
     /**
      * 后序遍历，其实也是"自底向上"的递归函数
@@ -70,7 +69,7 @@ public class MaxDepth {
 
     private int byStack(Node root) {
         if (root == null) return 0;
-        LinkedList<Pair<Node, Integer/*current depth*/>> stack = new LinkedList<>();
+        LinkedList<Pair<Node, Integer /*current depth*/>> stack = new LinkedList<>();
         stack.offer(new Pair<>(root, 1));
 
         int maxDepth = 0;

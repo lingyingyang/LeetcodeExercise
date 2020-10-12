@@ -30,7 +30,7 @@ public class KthLargest {
 
         dfs(root.right);
         if (k == 0) return;
-        if (--k == 0) ans = root.val;//找到目标
+        if (--k == 0) ans = root.val; // 找到目标
         dfs(root.left);
     }
 }

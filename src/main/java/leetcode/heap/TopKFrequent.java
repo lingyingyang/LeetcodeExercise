@@ -10,12 +10,12 @@ public class TopKFrequent {
     }
 
     public int[] topKFrequent(int[] nums, int k) {
-        Map<Integer/*number*/, Integer/*count*/> map = new HashMap<>();
+        Map<Integer /*number*/, Integer /*count*/> map = new HashMap<>();
         for (int num : nums) {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
-        PriorityQueue<Map.Entry<Integer, Integer>> queue = new PriorityQueue<>(Comparator
-                .comparingInt(Map.Entry::getValue));
+        PriorityQueue<Map.Entry<Integer, Integer>> queue =
+                new PriorityQueue<>(Comparator.comparingInt(Map.Entry::getValue));
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             queue.offer(entry);
             if (queue.size() > k) {

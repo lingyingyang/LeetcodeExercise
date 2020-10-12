@@ -9,7 +9,7 @@ import java.net.SocketAddress;
 
 /**
  * has test
- **/
+ */
 @Slf4j
 public class OutHandlerDemo extends ChannelOutboundHandlerAdapter {
     @Override
@@ -18,7 +18,6 @@ public class OutHandlerDemo extends ChannelOutboundHandlerAdapter {
         super.handlerAdded(ctx);
     }
 
-
     @Override
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
         log.info("被调用： handlerRemoved()");
@@ -26,13 +25,19 @@ public class OutHandlerDemo extends ChannelOutboundHandlerAdapter {
     }
 
     @Override
-    public void bind(ChannelHandlerContext ctx, SocketAddress localAddress, ChannelPromise promise) throws Exception {
+    public void bind(ChannelHandlerContext ctx, SocketAddress localAddress, ChannelPromise promise)
+            throws Exception {
         log.info("被调用： bind()");
         super.bind(ctx, localAddress, promise);
     }
 
     @Override
-    public void connect(ChannelHandlerContext ctx, SocketAddress remoteAddress, SocketAddress localAddress, ChannelPromise promise) throws Exception {
+    public void connect(
+            ChannelHandlerContext ctx,
+            SocketAddress remoteAddress,
+            SocketAddress localAddress,
+            ChannelPromise promise)
+            throws Exception {
         log.info("被调用： connect()");
         super.connect(ctx, remoteAddress, localAddress, promise);
     }
@@ -50,7 +55,8 @@ public class OutHandlerDemo extends ChannelOutboundHandlerAdapter {
     }
 
     @Override
-    public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) throws Exception {
+    public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise)
+            throws Exception {
         log.info("被调用： write()");
         super.write(ctx, msg, promise);
     }

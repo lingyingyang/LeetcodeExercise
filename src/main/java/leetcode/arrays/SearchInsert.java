@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SearchInsert {
     public static void main(String[] args) {
         int[] nums = {1, 3, 5, 6};
-//        int[] nums = {1, 3};
+        //        int[] nums = {1, 3};
         int out = new SearchInsert().searchInsert(nums, 2);
         assertEquals(1, out);
     }
@@ -22,7 +22,7 @@ public class SearchInsert {
                 return mid;
             } else if (target > nums[mid]) {
                 left = mid + 1;
-            } else {//target < nums[mid]
+            } else { // target < nums[mid]
                 right = mid - 1;
             }
         }

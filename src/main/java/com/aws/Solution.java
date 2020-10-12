@@ -13,13 +13,10 @@ class Solution {
     }
 
     // METHOD SIGNATURE BEGINS, THIS METHOD IS REQUIRED
-    public ArrayList<String> popularNToys(int numToys,
-                                          int topToys,
-                                          List<String> toys,
-                                          int numQuotes,
-                                          List<String> quotes) {
+    public ArrayList<String> popularNToys(
+            int numToys, int topToys, List<String> toys, int numQuotes, List<String> quotes) {
         PriorityQueue<int[]> heap = new PriorityQueue<>(topToys, Comparator.comparingInt(n -> n[1]));
-        HashMap<String, int[]/*[idx, count]*/> map = new HashMap<>();
+        HashMap<String, int[] /*[idx, count]*/> map = new HashMap<>();
         for (int i = 0; i < toys.size(); i++) {
             String toy = toys.get(i);
             map.put(toy, new int[]{i, 0});
@@ -37,12 +34,13 @@ class Solution {
         }
 
         ArrayList<String> ans = new ArrayList<>();
-        map.forEach((k, v) -> {
-            heap.add(v);
-            if (heap.size() > topToys) {
-                heap.poll();
-            }
-        });
+        map.forEach(
+                (k, v) -> {
+                    heap.add(v);
+                    if (heap.size() > topToys) {
+                        heap.poll();
+                    }
+                });
 
         while (!heap.isEmpty()) {
             ans.add(toys.get(heap.poll()[0]));

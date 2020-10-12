@@ -23,16 +23,16 @@ public class MaxPoints {
             int[] currPoint = points[i];
             int duplicate = 0;
             int max = 0;
-            Map<String/*斜率*/, Integer/*数量*/> countMap = new HashMap<>();
+            Map<String /*斜率*/, Integer /*数量*/> countMap = new HashMap<>();
             for (int j = i + 1; j < points.length; j++) {
-                //求分子分母
+                // 求分子分母
                 int x = points[j][0] - currPoint[0];
                 int y = points[j][1] - currPoint[1];
                 if (x == 0 && y == 0) {
                     duplicate++;
                     continue;
                 }
-                //约分
+                // 约分
                 int gcd = gcd(x, y);
                 x /= gcd;
                 y /= gcd;
@@ -40,7 +40,7 @@ public class MaxPoints {
                 countMap.put(key, countMap.getOrDefault(key, 0) + 1);
                 max = Math.max(max, countMap.get(key));
             }
-            //1 代表当前考虑的点，duplicate 代表和当前的点重复的点
+            // 1 代表当前考虑的点，duplicate 代表和当前的点重复的点
             ans = Math.max(ans, max + duplicate + 1);
         }
 

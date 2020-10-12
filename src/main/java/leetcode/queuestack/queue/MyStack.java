@@ -47,7 +47,7 @@ public class MyStack {
             q2.add(top);
         }
         Integer ans = q1.remove();
-        //swap q1 and q2
+        // swap q1 and q2
         Queue<Integer> temp = q1;
         q1 = q2;
         q2 = temp;

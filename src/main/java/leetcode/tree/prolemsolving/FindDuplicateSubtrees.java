@@ -23,7 +23,7 @@ public class FindDuplicateSubtrees {
 
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
         List<TreeNode> ans = new ArrayList<>();
-        Map<String/*pattern*/, Integer/*count*/> map = new HashMap<>();
+        Map<String /*pattern*/, Integer /*count*/> map = new HashMap<>();
         helper(root, map, ans);
         return ans;
     }
@@ -31,7 +31,8 @@ public class FindDuplicateSubtrees {
     private String helper(TreeNode root, Map<String, Integer> map, List<TreeNode> ans) {
         if (root == null) return "null";
 
-        String pattern = root.val + "[" + helper(root.left, map, ans) + "," + helper(root.right, map, ans) + "]";
+        String pattern =
+                root.val + "[" + helper(root.left, map, ans) + "," + helper(root.right, map, ans) + "]";
 
         map.put(pattern, map.getOrDefault(pattern, 0) + 1);
         if (map.get(pattern) == 2) {

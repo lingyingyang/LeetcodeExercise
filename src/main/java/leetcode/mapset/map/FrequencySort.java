@@ -18,12 +18,14 @@ public class FrequencySort {
         }
 
         StringBuilder sb = new StringBuilder();
-        map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-           .forEach(entry -> {
-               for (int i = 0; i < entry.getValue(); i++) {
-                   sb.append(entry.getKey());
-               }
-           });
+        map.entrySet().stream()
+           .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+           .forEach(
+                   entry -> {
+                       for (int i = 0; i < entry.getValue(); i++) {
+                           sb.append(entry.getKey());
+                       }
+                   });
         return sb.toString();
     }
 }

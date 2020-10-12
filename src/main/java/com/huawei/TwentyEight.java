@@ -15,7 +15,7 @@ public class TwentyEight {
         while ((str = br.readLine()) != null) {
             int n = Integer.parseInt(str);
             long[] arr = new long[n];
-            String[] numStr = br.readLine().split(" ");// str—>str数组
+            String[] numStr = br.readLine().split(" "); // str—>str数组
             for (int i = 0; i < arr.length; i++) {
                 arr[i] = Integer.parseInt(numStr[i]);
             }

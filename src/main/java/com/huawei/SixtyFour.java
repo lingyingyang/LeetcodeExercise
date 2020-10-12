@@ -41,9 +41,7 @@ public class SixtyFour {
         for (int i = 0; i < list.size(); i++) {
             int n = list.get(i);
             list.remove(i);
-            if (getResult(list, temp * n)
-                    || getResult(list, temp + n)
-                    || getResult(list, temp - n)) {
+            if (getResult(list, temp * n) || getResult(list, temp + n) || getResult(list, temp - n)) {
                 return true;
             } else if (temp % n == 0) {
                 if (getResult(list, temp / n)) {

@@ -15,7 +15,7 @@ public class NumberOfBoomerangs {
     public int numberOfBoomerangs(int[][] points) {
         int ans = 0;
         for (int[] pointA : points) {
-            Map<Integer/*距离*/, Integer/*数量*/> map = new HashMap<>();
+            Map<Integer /*距离*/, Integer /*数量*/> map = new HashMap<>();
             for (int[] pointB : points) {
                 int dx = pointA[0] - pointB[0];
                 int dy = pointA[1] - pointB[1];

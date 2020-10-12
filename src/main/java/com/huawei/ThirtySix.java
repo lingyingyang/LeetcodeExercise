@@ -18,19 +18,15 @@ public class ThirtySix {
             StringBuilder bu = new StringBuilder();
             String sr1 = br.readLine();
             HashSet<Character> set = new LinkedHashSet<>();
-            for (int i = 0; i < sr.length(); i++)
-                set.add(sr.charAt(i));
-            for (int i = 0; i < 26; i++)
-                set.add((char) (i + 'a'));
+            for (int i = 0; i < sr.length(); i++) set.add(sr.charAt(i));
+            for (int i = 0; i < 26; i++) set.add((char) (i + 'a'));
             char[] ch = new char[set.size()];
             Iterator<Character> iter = set.iterator();
-            for (int i = 0; i < ch.length && iter.hasNext(); i++)
-                ch[i] = iter.next();
+            for (int i = 0; i < ch.length && iter.hasNext(); i++) ch[i] = iter.next();
             for (int i = 0; i < sr1.length(); i++) {
                 if (Character.isLowerCase(sr1.charAt(i)))
                     bu.append(Character.toLowerCase(ch[sr1.charAt(i) - 'a']));
-                else
-                    bu.append(Character.toUpperCase(ch[sr1.charAt(i) - 'A']));
+                else bu.append(Character.toUpperCase(ch[sr1.charAt(i) - 'A']));
             }
             System.out.println(bu);
         }

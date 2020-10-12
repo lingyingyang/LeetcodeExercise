@@ -15,18 +15,15 @@ public class MyQueue {
     public void push(int x) {
         if (s1.empty()) front = x;
 
-        while (!s1.isEmpty())
-            s2.push(s1.pop());
+        while (!s1.isEmpty()) s2.push(s1.pop());
         s2.push(x);
-        while (!s2.isEmpty())
-            s1.push(s2.pop());
+        while (!s2.isEmpty()) s1.push(s2.pop());
     }
 
     // Removes the element from the front of queue.
     public int pop() {
         int ans = s1.pop();
-        if (!s1.empty())
-            front = s1.peek();
+        if (!s1.empty()) front = s1.peek();
         return ans;
     }
 

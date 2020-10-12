@@ -26,12 +26,9 @@ public class FiftyFive {
             }
             Arrays.sort(intArr);
             for (int i = 0; i < k; i++) {
-                if (i == k - 1)
-                    System.out.println(intArr[i]);
-                else
-                    System.out.print(intArr[i] + " ");
+                if (i == k - 1) System.out.println(intArr[i]);
+                else System.out.print(intArr[i] + " ");
             }
         }
     }
-
 }

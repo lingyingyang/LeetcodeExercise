@@ -13,8 +13,8 @@ public class MergeTwoLists {
         MergeTwoLists t = new MergeTwoLists();
         ListNode l1 = NodeUtil.createListNode(new int[]{1, 2, 4});
         ListNode l2 = NodeUtil.createListNode(new int[]{1, 3, 4});
-//        ListNode out = t.mergeTwoLists(l1, l2);
-//        ListNode out = t.byRecur(l1, l2);
+        //        ListNode out = t.mergeTwoLists(l1, l2);
+        //        ListNode out = t.byRecur(l1, l2);
         ListNode out = t.byIter(l1, l2);
         NodeUtil.print(out);
     }
@@ -61,23 +61,21 @@ public class MergeTwoLists {
     private ListNode mergeKLists(List<ListNode> in) {
         if (in == null || in.size() == 0) return null;
 
-        PriorityQueue<ListNode> queue = new PriorityQueue<>(in.size(),
-                Comparator.comparingInt(o -> o.val));
+        PriorityQueue<ListNode> queue =
+                new PriorityQueue<>(in.size(), Comparator.comparingInt(o -> o.val));
 
         ListNode dummy = new ListNode(0);
         ListNode curr = dummy;
 
         for (ListNode node : in) {
-            if (node != null)
-                queue.add(node);
+            if (node != null) queue.add(node);
         }
 
         while (!queue.isEmpty()) {
             curr.next = queue.poll(); // retrieve and remove the first element of queue
             curr = curr.next; // move curr cursor to next
 
-            if (curr.next != null)
-                queue.add(curr.next);
+            if (curr.next != null) queue.add(curr.next);
         }
         return dummy.next;
     }

@@ -49,7 +49,7 @@ public class ReplaceWord {
             TrieNode cur = root;
             for (int i = 0; i < word.length(); i++) {
                 char c = word.charAt(i);
-                if (!cur.children.containsKey(c)) {//不包括，插入
+                if (!cur.children.containsKey(c)) { // 不包括，插入
                     cur.children.put(c, new TrieNode());
                 }
                 cur = cur.children.get(c);
@@ -65,7 +65,7 @@ public class ReplaceWord {
             TrieNode cur = root;
             for (int i = 0; i < word.length(); i++) {
                 char c = word.charAt(i);
-                if (!cur.children.containsKey(c)) {//不包括
+                if (!cur.children.containsKey(c)) { // 不包括
                     return new Result(false, null);
                 }
                 cur = cur.children.get(c);

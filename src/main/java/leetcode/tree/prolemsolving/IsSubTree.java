@@ -20,8 +20,7 @@ public class IsSubTree {
     }
 
     private boolean traverse(TreeNode s, TreeNode t) {
-        return s != null
-                && (equals(s, t) || traverse(s.left, t) || traverse(s.right, t));
+        return s != null && (equals(s, t) || traverse(s.left, t) || traverse(s.right, t));
     }
 
     /**
@@ -32,11 +31,9 @@ public class IsSubTree {
      * @return
      */
     private boolean equals(TreeNode t1, TreeNode t2) {
-        if (t1 == null && t2 == null) return true;//t1和t2都到达了叶子节点
-        else if (t1 == null || t2 == null) return false;//其中一方还有子节点
+        if (t1 == null && t2 == null) return true; // t1和t2都到达了叶子节点
+        else if (t1 == null || t2 == null) return false; // 其中一方还有子节点
 
-        return t1.val == t2.val
-                && equals(t1.left, t2.left)
-                && equals(t1.right, t2.right);
+        return t1.val == t2.val && equals(t1.left, t2.left) && equals(t1.right, t2.right);
     }
 }

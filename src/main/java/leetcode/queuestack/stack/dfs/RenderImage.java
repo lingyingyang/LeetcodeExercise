@@ -23,14 +23,27 @@ public class RenderImage {
         return image;
     }
 
-    private void helper(int[][] image, int row, int col, int rows, int cols, int color, int newColor, boolean[][] visited) {
-        if (row < 0 || col < 0 || row >= rows || col >= cols || visited[row][col] || image[row][col] != color) return;
+    private void helper(
+            int[][] image,
+            int row,
+            int col,
+            int rows,
+            int cols,
+            int color,
+            int newColor,
+            boolean[][] visited) {
+        if (row < 0
+                || col < 0
+                || row >= rows
+                || col >= cols
+                || visited[row][col]
+                || image[row][col] != color) return;
 
         visited[row][col] = true;
         image[row][col] = newColor;
-        helper(image, row - 1, col, rows, cols, color, newColor, visited);//left
-        helper(image, row + 1, col, rows, cols, color, newColor, visited);//right
-        helper(image, row, col - 1, rows, cols, color, newColor, visited);//up
-        helper(image, row, col + 1, rows, cols, color, newColor, visited);//down
+        helper(image, row - 1, col, rows, cols, color, newColor, visited); // left
+        helper(image, row + 1, col, rows, cols, color, newColor, visited); // right
+        helper(image, row, col - 1, rows, cols, color, newColor, visited); // up
+        helper(image, row, col + 1, rows, cols, color, newColor, visited); // down
     }
 }

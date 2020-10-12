@@ -14,8 +14,7 @@ public class KClosest {
     }
 
     /**
-     * 时间复杂度：O(N log N)，其中 N 是给定点的数量。
-     * 空间复杂度：O(N)。
+     * 时间复杂度：O(N log N)，其中 N 是给定点的数量。 空间复杂度：O(N)。
      *
      * @param points
      * @param k
@@ -30,7 +29,7 @@ public class KClosest {
             if (i < k) {
                 heap.offer(point);
             }
-            //如果当前point大于队列中的第一个，则其优先级小于队列中的最高优先级
+            // 如果当前point大于队列中的第一个，则其优先级小于队列中的最高优先级
             else if (comparator.compare(point, heap.peek()) > 0) {
                 heap.offer(point);
                 heap.poll();
@@ -49,8 +48,8 @@ public class KClosest {
     private static class DistanceComparator implements Comparator<Integer[]> {
         @Override
         public int compare(Integer[] a, Integer[] b) {
-            return Double.compare(Math.pow(b[0], 2) + Math.pow(b[1], 2),
-                    Math.pow(a[0], 2) + Math.pow(a[1], 2));
+            return Double.compare(
+                    Math.pow(b[0], 2) + Math.pow(b[1], 2), Math.pow(a[0], 2) + Math.pow(a[1], 2));
         }
     }
 }

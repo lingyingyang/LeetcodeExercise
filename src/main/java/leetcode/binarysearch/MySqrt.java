@@ -12,10 +12,10 @@ public class MySqrt {
         int left = 0, right = x, ans = -1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            if ((long) mid * mid <= x) {//可能在右区间，转换成long防止int类型溢出
+            if ((long) mid * mid <= x) { // 可能在右区间，转换成long防止int类型溢出
                 left = mid + 1;
                 ans = mid;
-            } else {//可能在左区间
+            } else { // 可能在左区间
                 right = mid - 1;
             }
         }

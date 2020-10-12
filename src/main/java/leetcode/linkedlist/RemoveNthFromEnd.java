@@ -23,11 +23,11 @@ public class RemoveNthFromEnd {
             pioneer = pioneer.next;
         }
 
-        while (pioneer.next != null) {//是否到达尾部
+        while (pioneer.next != null) { // 是否到达尾部
             pioneer = pioneer.next;
             curr = curr.next;
         }
-        curr.next = curr.next.next;//删除倒数第n个节点
+        curr.next = curr.next.next; // 删除倒数第n个节点
 
         return dump.next;
     }

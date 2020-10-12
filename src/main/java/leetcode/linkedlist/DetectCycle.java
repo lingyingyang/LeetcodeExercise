@@ -21,12 +21,11 @@ public class DetectCycle {
     public ListNode detectCycle(ListNode node) {
         Set<ListNode> seen = new HashSet<>();
         while (node != null) {
-            if (seen.contains(node))//发现第一个重复的节点
+            if (seen.contains(node)) // 发现第一个重复的节点
                 return node;
-            else
-                seen.add(node);
+            else seen.add(node);
             node = node.next;
         }
-        return null;//没有闭环
+        return null; // 没有闭环
     }
 }

@@ -10,14 +10,16 @@ public class GameOfLife {
                 {0, 1, 0},
                 {0, 0, 1},
                 {1, 1, 1},
-                {0, 0, 0}};
+                {0, 0, 0}
+        };
         GameOfLife t = new GameOfLife();
         t.gameOfLife(board);
         int[][] expect = {
                 {0, 0, 0},
                 {1, 0, 1},
                 {0, 1, 1},
-                {0, 1, 0}};
+                {0, 1, 0}
+        };
         assertEquals(Arrays.deepToString(expect), Arrays.deepToString(board));
     }
 
@@ -42,7 +44,9 @@ public class GameOfLife {
                             int c = (col + neighbors[j]);
 
                             // 查看相邻的细胞是否是活细胞
-                            if ((r < rowLen && r >= 0) && (c < colLen && c >= 0) && (Math.abs(board[r][c]) == 1)) {
+                            if ((r < rowLen && r >= 0)
+                                    && (c < colLen && c >= 0)
+                                    && (Math.abs(board[r][c]) == 1)) {
                                 liveNeighbors += 1;
                             }
                         }

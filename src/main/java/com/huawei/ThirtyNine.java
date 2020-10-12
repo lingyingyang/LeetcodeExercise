@@ -10,8 +10,8 @@ import java.io.InputStreamReader;
 public class ThirtyNine {
     private static int weight(int n, int[] weight, int[] nums) {
         int sum = 0;
-        //单种砝码可以表示的
-        for (int i = 0; i < n; i++) {//种类数
+        // 单种砝码可以表示的
+        for (int i = 0; i < n; i++) { // 种类数
             sum = sum + nums[i] * weight[i];
         }
         boolean[] weg = new boolean[sum + 1];

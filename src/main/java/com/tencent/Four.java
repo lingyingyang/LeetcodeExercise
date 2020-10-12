@@ -45,6 +45,5 @@ public class Four {
             }
             System.out.println(ans);
         }
-
     }
 }

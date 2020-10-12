@@ -34,5 +34,4 @@ public class One {
             System.out.println(s);
         }
     }
-
 }

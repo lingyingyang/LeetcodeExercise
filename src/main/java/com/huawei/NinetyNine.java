@@ -17,7 +17,7 @@ public class NinetyNine {
 
     private static String fun(String str) {
         char[] chs = str.toCharArray();
-        int[] num = new int[200];     //必须大于128
+        int[] num = new int[200]; // 必须大于128
         for (char c : chs) {
             num[(int) c]++;
         }

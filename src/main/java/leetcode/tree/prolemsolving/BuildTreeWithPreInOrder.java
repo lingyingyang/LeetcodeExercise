@@ -18,10 +18,8 @@ public class BuildTreeWithPreInOrder {
                 inIndex = i;
             }
         }
-        root.left = helper(preStart + 1,
-                inStart, inIndex - 1, preorder, inorder);
-        root.right = helper(preStart + inIndex - inStart + 1,
-                inIndex + 1, inEnd, preorder, inorder);
+        root.left = helper(preStart + 1, inStart, inIndex - 1, preorder, inorder);
+        root.right = helper(preStart + inIndex - inStart + 1, inIndex + 1, inEnd, preorder, inorder);
         return root;
     }
 }

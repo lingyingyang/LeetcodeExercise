@@ -10,7 +10,8 @@ public class SetZeros {
         int[][] matrix = {
                 {1, 1, 1},
                 {1, 0, 1},
-                {1, 1, 1}};
+                {1, 1, 1}
+        };
         t.setZeroes(matrix);
         for (int[] row : matrix) {
             System.out.println(Arrays.toString(row));

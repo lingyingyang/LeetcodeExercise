@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
  */
 public class SixtyEight {
     public static boolean isMatch(String str1, String str2) {
-        str1 = str1.replaceAll("\\?", "[0-9a-zA-Z]");//把str1变成正则表达式
+        str1 = str1.replaceAll("\\?", "[0-9a-zA-Z]"); // 把str1变成正则表达式
         str1 = str1.replaceAll("\\*", "[0-9a-zA-Z]*");
         str1 = str1.replaceAll("\\.", "\\.");
         return str2.matches(str1);

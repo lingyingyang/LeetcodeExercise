@@ -7,13 +7,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MoveZero {
     public static void main(String[] args) {
         MoveZero t = new MoveZero();
-//        int[] nums = {0, 1, 0, 3, 12};
-//        t.moveZeroes(nums);
-//        System.out.println(Arrays.toString(nums));
+        //        int[] nums = {0, 1, 0, 3, 12};
+        //        t.moveZeroes(nums);
+        //        System.out.println(Arrays.toString(nums));
 
-//        int out = t.removeElement(nums, 0);
-//        assertEquals(3, out);
-//        System.out.println(Arrays.toString(nums));
+        //        int out = t.removeElement(nums, 0);
+        //        assertEquals(3, out);
+        //        System.out.println(Arrays.toString(nums));
 
         int[] nums = {1, 1, 1, 2, 2, 3};
         int len = t.removeDuplicates(nums);
@@ -23,7 +23,7 @@ public class MoveZero {
 
     public void moveZeroes(int[] nums) {
         if (nums.length == 0) return;
-        //1 fast遇到非零时，与slow互换
+        // 1 fast遇到非零时，与slow互换
         int slow = 0, fast = 0;
         while (fast < nums.length) {
             if (nums[fast] != 0) {

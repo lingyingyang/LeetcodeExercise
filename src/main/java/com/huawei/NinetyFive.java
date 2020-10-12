@@ -31,12 +31,10 @@ public class NinetyFive {
             } else if (temp2[0].equals("q") || temp2[0].matches("q\\d")) {
                 opQuery(temp, goods);
             }
-
         }
-
     }
 
-    public static Goods OpReset(String initial) {//初始化
+    public static Goods OpReset(String initial) { // 初始化
         String[] arr = initial.split(" ");
         String[] Asome = arr[1].split("-");
         String[] Moneysome = arr[2].split("-");
@@ -53,16 +51,22 @@ public class NinetyFive {
         return goods;
     }
 
-    public static void opPay(String payString, Goods goods) {//投币
+    public static void opPay(String payString, Goods goods) { // 投币
         String[] arr = payString.split(" ");
         int payNum = Integer.parseInt(arr[1]);
         if (payNum != 1 && payNum != 2 && payNum != 5 && payNum != 10) {
             System.out.println("E002:Denomination error");
-        } else if ((payNum == 5 || payNum == 10) && (goods.num_coin[0] + goods.num_coin[1] * 2 < payNum)) {
+        } else if ((payNum == 5 || payNum == 10)
+                && (goods.num_coin[0] + goods.num_coin[1] * 2 < payNum)) {
             System.out.println("E003:Change is not enough, pay fail");
         } else if (payNum > 10) {
             System.out.println("E004:Pay the balance is beyond the scope biggest");
-        } else if (goods.num_goods[0] == 0 && goods.num_goods[1] == 0 && goods.num_goods[2] == 0 && goods.num_goods[3] == 0 && goods.num_goods[4] == 0 && goods.num_goods[5] == 0) {
+        } else if (goods.num_goods[0] == 0
+                && goods.num_goods[1] == 0
+                && goods.num_goods[2] == 0
+                && goods.num_goods[3] == 0
+                && goods.num_goods[4] == 0
+                && goods.num_goods[5] == 0) {
             System.out.println("E005:All the goods sold out");
         } else {
             switch (payNum) {
@@ -83,10 +87,9 @@ public class NinetyFive {
             goods.toubi_yu_e += payNum;
             System.out.println("S002:Pay success,balance=" + tmp);
         }
-
     }
 
-    public static void opBuy(String buyString, Goods goods) {//购买商品
+    public static void opBuy(String buyString, Goods goods) { // 购买商品
         String[] goodsString = {"A1", "A2", "A3", "A4", "A5", "A6"};
         String[] arr = buyString.split(" ");
         String buy = arr[1];
@@ -120,7 +123,6 @@ public class NinetyFive {
                         index = i;
                         break;
                 }
-
             }
         }
         if (index == 10) {
@@ -135,7 +137,7 @@ public class NinetyFive {
         }
     }
 
-    public static void opChange(String changeString, Goods goods) {//退币
+    public static void opChange(String changeString, Goods goods) { // 退币
         if (goods.toubi_yu_e == 0) {
             System.out.print("E009:Work failure");
         } else {

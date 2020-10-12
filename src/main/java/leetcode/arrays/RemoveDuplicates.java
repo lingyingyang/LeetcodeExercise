@@ -19,9 +19,9 @@ public class RemoveDuplicates {
         if (nums.length == 0) return 0;
         int slow = 0;
         for (int fast = 1; fast < nums.length; fast++) {
-            if (nums[slow] == nums[fast]) continue;//重复，跳过
-            //1让slow指向下一个非重复值的index
-            //2复制下一个非重复值给slow
+            if (nums[slow] == nums[fast]) continue; // 重复，跳过
+            // 1让slow指向下一个非重复值的index
+            // 2复制下一个非重复值给slow
             ++slow;
             nums[slow] = nums[fast];
         }
@@ -39,7 +39,7 @@ public class RemoveDuplicates {
             if (!set.contains(head.val)) {
                 set.add(head.val);
                 prev = prev.next;
-            } else {//contained
+            } else { // contained
                 prev.next = head.next;
             }
             head = head.next;

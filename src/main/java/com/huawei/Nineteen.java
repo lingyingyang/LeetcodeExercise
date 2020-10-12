@@ -25,5 +25,4 @@ public class Nineteen {
             System.out.println(key + " " + map.get(key));
         }
     }
-
 }

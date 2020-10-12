@@ -21,9 +21,9 @@ public class ReverseString {
     private void helper(char[] s, int left, int right) {
         if (left >= right) return;
 
-        swap(s, left, right);//自顶向下
+        swap(s, left, right); // 自顶向下
         helper(s, left + 1, right - 1);
-//        swap(s, left, right);//自底向上
+        //        swap(s, left, right);//自底向上
     }
 
     public void reverseString(char[] s) {

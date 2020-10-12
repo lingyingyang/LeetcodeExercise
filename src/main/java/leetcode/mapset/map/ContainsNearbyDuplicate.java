@@ -13,12 +13,12 @@ public class ContainsNearbyDuplicate {
     }
 
     public boolean containsNearbyDuplicate(int[] nums, int k) {
-        HashMap<Integer/*第一次出现的item*/, Integer/*idx*/> map = new HashMap<>();
+        HashMap<Integer /*第一次出现的item*/, Integer /*idx*/> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (map.containsKey(nums[i])) {
                 if ((i - map.get(nums[i])) <= k) {
                     return true;
-                } else {//替换之前的idx，考虑到后面有可能的情况
+                } else { // 替换之前的idx，考虑到后面有可能的情况
                     map.put(nums[i], i);
                 }
             } else {

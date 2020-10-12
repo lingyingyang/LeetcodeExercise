@@ -26,7 +26,7 @@ public class MovingAverage {
     }
 
     public double next(int val) {
-        if (queue.size() == capacity) {//超过了capacity，删除head
+        if (queue.size() == capacity) { // 超过了capacity，删除head
             sum -= queue.remove();
         }
 

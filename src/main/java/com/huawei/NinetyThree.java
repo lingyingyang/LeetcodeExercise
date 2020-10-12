@@ -29,11 +29,9 @@ public class NinetyThree {
                 System.out.print(c);
             }
             char c = str.charAt(str.length() - 1);
-            if (c >= '0' && c <= '9')
-                System.out.print("*");
+            if (c >= '0' && c <= '9') System.out.print("*");
             System.out.println();
         }
         bf.close();
     }
-
 }

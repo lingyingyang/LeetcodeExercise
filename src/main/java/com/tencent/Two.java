@@ -12,9 +12,9 @@ public class Two {
         for (int i = 0; i < houses; i++) {
             String line = in.nextLine();
             String[] items = line.split(" ");
-            costs[i][0] = Integer.parseInt(items[0]);//red
-            costs[i][1] = Integer.parseInt(items[1]);//green
-            costs[i][2] = Integer.parseInt(items[2]);//blue
+            costs[i][0] = Integer.parseInt(items[0]); // red
+            costs[i][1] = Integer.parseInt(items[1]); // green
+            costs[i][2] = Integer.parseInt(items[2]); // blue
         }
 
         int out = new PaintHouse().minCost(costs);

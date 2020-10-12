@@ -12,7 +12,9 @@ public class ThirtyFive {
             int n = sc.nextInt();
             StringBuilder builder = new StringBuilder();
             for (int i = 1; i <= n; i++) {
-                for (int j = 1, start = (i - 1) * i / 2 + 1, step = i + 1; j <= n - i + 1; j++, start += step, step++) {
+                for (int j = 1, start = (i - 1) * i / 2 + 1, step = i + 1;
+                     j <= n - i + 1;
+                     j++, start += step, step++) {
                     builder.append(start).append(' ');
                 }
                 // 设置换行符
@@ -21,5 +23,4 @@ public class ThirtyFive {
             System.out.print(builder.toString());
         }
     }
-
 }

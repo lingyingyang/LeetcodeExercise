@@ -7,15 +7,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * 时间复杂度：O(1)。该数据结构中，所有方法都具有恒定的时间复杂度。
- * <p>
- * 空间复杂度：O(N)，其中 N 是队列的预分配容量。循环队列的整个生命周期中，都持有该预分配的空间。
+ *
+ * <p>空间复杂度：O(N)，其中 N 是队列的预分配容量。循环队列的整个生命周期中，都持有该预分配的空间。
  */
 public class MyCircularQueue {
     public static void main(String[] args) {
         MyCircularQueue t = new MyCircularQueue(3);
         assertThat(t.enQueue(1)).isTrue();
         assertThat(t.enQueue(2)).isTrue();
-        System.out.println(String.format("head: %d, count: %d, queue: %s", t.head, t.count, Arrays.toString(t.queue)));
+        System.out.println(
+                String.format("head: %d, count: %d, queue: %s", t.head, t.count, Arrays.toString(t.queue)));
         assertThat(t.enQueue(3)).isTrue();
         assertThat(t.enQueue(4)).isFalse();
         assertThat(t.Front()).isEqualTo(1);

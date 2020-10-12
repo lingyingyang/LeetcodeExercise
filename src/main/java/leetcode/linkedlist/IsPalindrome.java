@@ -13,8 +13,7 @@ public class IsPalindrome {
     }
 
     /**
-     * 时间复杂度：O(n)，其中 n 指的是链表的大小。
-     * 空间复杂度：O(1)，我们是一个接着一个的改变指针，我们在堆栈上的堆栈帧不超过 O(1)。
+     * 时间复杂度：O(n)，其中 n 指的是链表的大小。 空间复杂度：O(1)，我们是一个接着一个的改变指针，我们在堆栈上的堆栈帧不超过 O(1)。
      *
      * @param head
      * @return
@@ -23,22 +22,22 @@ public class IsPalindrome {
         if (head == null) return true;
 
         ListNode fast = head, slow = head;
-        while (fast.next != null && fast.next.next != null) {//fast后面有两节点才移动
-            fast = fast.next.next;//fast移动2步
-            slow = slow.next;//slow移动1步
+        while (fast.next != null && fast.next.next != null) { // fast后面有两节点才移动
+            fast = fast.next.next; // fast移动2步
+            slow = slow.next; // slow移动1步
         }
         ListNode secondEnd = slow.next;
         ListNode secondStart = reverseList(secondEnd);
         ListNode firstStart = head;
         ListNode secondDump = secondStart;
         boolean ans = true;
-        while (secondStart != null) {//secondStart的长度<=firstStart的长度
+        while (secondStart != null) { // secondStart的长度<=firstStart的长度
             if (firstStart.val != secondStart.val) ans = false;
             firstStart = firstStart.next;
             secondStart = secondStart.next;
         }
 
-        reverseList(secondDump);//保持输入head的不变形
+        reverseList(secondDump); // 保持输入head的不变形
         return ans;
     }
 

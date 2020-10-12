@@ -19,8 +19,8 @@ public class PaintHouse {
         for (int i = 1; i < size; i++) {
             int prev = i - 1;
             for (int j = 0; j < conditions; j++) {
-                dp[i][j] = min(costs[prev][(j + 1) % conditions], costs[prev][(j + 2) % conditions])
-                        + dp[prev][j];
+                dp[i][j] =
+                        min(costs[prev][(j + 1) % conditions], costs[prev][(j + 2) % conditions]) + dp[prev][j];
             }
         }
 

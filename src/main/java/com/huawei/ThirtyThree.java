@@ -21,7 +21,6 @@ public class ThirtyThree {
         while (in[2].length() < 8) in[2] = "0" + in[2];
         while (in[3].length() < 8) in[3] = "0" + in[3];
 
-
         long sum = 0;
         for (String s : in) {
             for (int j = 0; j < in[0].length(); j++) {
@@ -29,7 +28,6 @@ public class ThirtyThree {
             }
         }
         System.out.println(sum);
-
     }
 
     public static void changeToAddress(String str) {
@@ -38,7 +36,9 @@ public class ThirtyThree {
         String[] out = new String[4];
         out[0] = binaryStr.substring(0, binaryStr.length() - 3 * 8);
         out[1] = binaryStr.substring(out[0].length(), out[0].length() + 8);
-        out[2] = binaryStr.substring(out[0].length() + out[1].length(), out[0].length() + out[1].length() + 8);
+        out[2] =
+                binaryStr.substring(
+                        out[0].length() + out[1].length(), out[0].length() + out[1].length() + 8);
         out[3] = binaryStr.substring(binaryStr.length() - 8, binaryStr.length());
 
         System.out.print(Integer.valueOf(out[0], 2) + ".");

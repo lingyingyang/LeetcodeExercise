@@ -20,8 +20,7 @@ public class IsPalindrome {
             } else if (isSkip(charTail)) {
                 tail--;
             } else {
-                if (Character.toLowerCase(charHead) != Character.toLowerCase(charTail))
-                    return false;
+                if (Character.toLowerCase(charHead) != Character.toLowerCase(charTail)) return false;
                 head++;
                 tail--;
             }

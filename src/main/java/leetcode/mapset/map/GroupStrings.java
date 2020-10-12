@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class GroupStrings {
     public static void main(String[] args) {
-//        System.out.println('y' - 'a');
+        //        System.out.println('y' - 'a');
         String[] strings = {"abc", "bcd", "acef", "xyz", "az", "ba", "a", "z"};
         List<List<String>> out = new GroupStrings().groupStrings(strings);
         for (List<String> line : out) {
@@ -18,7 +18,7 @@ public class GroupStrings {
     public List<List<String>> groupStrings(String[] strings) {
         if (strings.length == 0) return new ArrayList<>();
 
-        Map<String/*pattern*/, List<String>> map = new HashMap<>();
+        Map<String /*pattern*/, List<String>> map = new HashMap<>();
         for (String item : strings) {
             StringBuilder sb = new StringBuilder();
             sb.append(item.length()).append("|");

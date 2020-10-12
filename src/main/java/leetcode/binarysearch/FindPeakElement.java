@@ -14,11 +14,11 @@ public class FindPeakElement {
         if (nums.length == 0) return -1;
 
         int left = 0, right = nums.length - 1;
-        while (left < right) {//终止条件：left == right
+        while (left < right) { // 终止条件：left == right
             int mid = left + (right - left) / 2;
-            if (nums[mid + 1] > nums[mid]) {//趋势向上，峰值在右区间[mid+1..right]
+            if (nums[mid + 1] > nums[mid]) { // 趋势向上，峰值在右区间[mid+1..right]
                 left = mid + 1;
-            } else {//趋势向下，峰值在左区间[left..mid]
+            } else { // 趋势向下，峰值在左区间[left..mid]
                 right = mid;
             }
         }

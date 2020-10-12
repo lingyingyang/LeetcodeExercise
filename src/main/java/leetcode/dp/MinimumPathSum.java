@@ -16,8 +16,7 @@ public class MinimumPathSum {
                 } else if (row == 0 && col == 0) { // start point
                     grid[row][col] = grid[row][col];
                 } else {
-                    grid[row][col] = Math.min(grid[row][col - 1], grid[row - 1][col])
-                            + grid[row][col];
+                    grid[row][col] = Math.min(grid[row][col - 1], grid[row - 1][col]) + grid[row][col];
                 }
             }
         }

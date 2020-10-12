@@ -19,8 +19,7 @@ public class EightOne {
     private static int CalcCapital(String line) {
         int sum = 0;
         for (int i = 0; i < line.length(); ++i)
-            if (line.charAt(i) >= 'A' && line.charAt(i) <= 'Z')
-                ++sum;
+            if (line.charAt(i) >= 'A' && line.charAt(i) <= 'Z') ++sum;
 
         return sum;
     }

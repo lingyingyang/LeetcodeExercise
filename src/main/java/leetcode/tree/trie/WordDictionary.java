@@ -64,7 +64,7 @@ public class WordDictionary {
                 cur.children.put(c, new TrieNode(c));
             }
             cur = cur.children.get(c);
-            if (i == word.length() - 1) {//word的最后一位，标志word
+            if (i == word.length() - 1) { // word的最后一位，标志word
                 cur.isWord = true;
             }
         }
@@ -73,25 +73,25 @@ public class WordDictionary {
     public boolean search(String word) {
         LinkedList<TrieNode> nodes = new LinkedList<>();
         nodes.offer(root);
-        for (int idx = 0; idx < word.length(); idx++) {//迭代每层
+        for (int idx = 0; idx < word.length(); idx++) { // 迭代每层
             char nextChar = word.charAt(idx);
-            //迭代每层level的全部nodes，然后用下一层的list替换当前层的list
+            // 迭代每层level的全部nodes，然后用下一层的list替换当前层的list
             LinkedList<TrieNode> nextNodes = new LinkedList<>();
             for (TrieNode node : nodes) {
-                //如果不是特殊字符，nextNodes加上一个方向的数据
+                // 如果不是特殊字符，nextNodes加上一个方向的数据
                 if (nextChar != ANY_CHAR) {
                     if (node.containsChild(nextChar)) {
                         nextNodes.offer(node.children.get(nextChar));
                     }
-                } else {//如果是特殊字符，nextNodes加上所有方向的数据
+                } else { // 如果是特殊字符，nextNodes加上所有方向的数据
                     for (TrieNode child : node.children.values()) {
                         nextNodes.offer(child);
                     }
                 }
             }
             nodes = nextNodes;
-//            System.out.println(nodes.toString());
-            //level到达最后word最后的idx
+            //            System.out.println(nodes.toString());
+            // level到达最后word最后的idx
             if (idx == (word.length() - 1)) {
                 for (TrieNode node : nodes) {
                     if (node.isWord) return true;

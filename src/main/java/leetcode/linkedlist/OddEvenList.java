@@ -13,8 +13,7 @@ public class OddEvenList {
     }
 
     /**
-     * 时间复杂度： O(n) 。总共有 n 个节点，我们每个遍历一次。
-     * 空间复杂度： O(1) 。我们只需要 4 个指针。
+     * 时间复杂度： O(n) 。总共有 n 个节点，我们每个遍历一次。 空间复杂度： O(1) 。我们只需要 4 个指针。
      *
      * @param head
      * @return
@@ -26,12 +25,12 @@ public class OddEvenList {
         ListNode even = head.next;
         ListNode evenHead = even;
         while (even != null && even.next != null) {
-            odd.next = even.next;//odd指向下一个odd
-            odd = odd.next;//odd指针跳到下一个odd
-            even.next = odd.next;//even指向一个even
-            even = even.next;//even指针跳到下一个even
+            odd.next = even.next; // odd指向下一个odd
+            odd = odd.next; // odd指针跳到下一个odd
+            even.next = odd.next; // even指向一个even
+            even = even.next; // even指针跳到下一个even
         }
-        odd.next = evenHead;//缝接odd和even
+        odd.next = evenHead; // 缝接odd和even
         return head;
     }
 }

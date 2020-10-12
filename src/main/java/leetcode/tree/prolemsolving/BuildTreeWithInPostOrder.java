@@ -3,7 +3,7 @@ package leetcode.tree.prolemsolving;
 import leetcode.tree.TreeNode;
 
 public class BuildTreeWithInPostOrder {
-    private int IdxInOrder;   // index of inorder array
+    private int IdxInOrder; // index of inorder array
     private int IdxPostOrder; // index of postorder array
 
     public TreeNode buildTree(int[] inorder, int[] postorder) {

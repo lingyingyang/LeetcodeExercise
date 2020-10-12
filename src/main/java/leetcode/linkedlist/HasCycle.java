@@ -24,6 +24,5 @@ public class HasCycle {
             fast = fast.next.next;
         }
         return true;
-
     }
 }

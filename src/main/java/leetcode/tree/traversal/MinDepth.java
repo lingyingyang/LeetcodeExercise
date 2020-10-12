@@ -26,7 +26,7 @@ public class MinDepth {
     }
 
     private int helper(TreeNode root) {
-        if (root.left == null && root.right == null) { //叶子节点
+        if (root.left == null && root.right == null) { // 叶子节点
             return 1;
         }
 

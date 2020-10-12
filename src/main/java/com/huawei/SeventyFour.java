@@ -36,13 +36,10 @@ public class SeventyFour {
             scanner.nextLine();
             String str = scanner.nextLine();
             String[] ss = str.split(" ");
-            for (int i = ss.length - 1; i >= 0; i--)
-                stack1.push(ss[i]);
+            for (int i = ss.length - 1; i >= 0; i--) stack1.push(ss[i]);
             ff("");
             Collections.sort(list);
-            for (String s : list)
-                System.out.println(s);
+            for (String s : list) System.out.println(s);
         }
-
     }
 }

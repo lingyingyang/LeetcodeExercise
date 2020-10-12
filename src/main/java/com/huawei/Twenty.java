@@ -11,8 +11,7 @@ public class Twenty {
         while (sc.hasNext()) {
             String str = sc.nextLine();
             int[] conditionals = {0, 0, 0, 0};
-            if (str.length() < 9)
-                System.out.println("NG");
+            if (str.length() < 9) System.out.println("NG");
             else {
                 for (int i = 0; i < str.length(); i++) {
                     char ch = str.charAt(i);
@@ -43,8 +42,7 @@ public class Twenty {
         for (int i = 0; i < str.length() - 3; i++) {
             String str1 = str.substring(i, i + 3);
             String str2 = str.substring(i + 3, str.length());
-            if (str2.contains(str1))
-                return "NG";
+            if (str2.contains(str1)) return "NG";
         }
         return "OK";
     }

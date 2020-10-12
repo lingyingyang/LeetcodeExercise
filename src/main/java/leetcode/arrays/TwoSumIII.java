@@ -13,7 +13,7 @@ public class TwoSumIII {
         assertTrue(test.find(0));
     }
 
-    private final Map<Integer/*value*/, Integer/*count*/> map;
+    private final Map<Integer /*value*/, Integer /*count*/> map;
 
     /**
      * Initialize your data structure here.

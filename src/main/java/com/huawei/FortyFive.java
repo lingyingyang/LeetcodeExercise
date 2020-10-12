@@ -22,7 +22,7 @@ public class FortyFive {
                 curNo = values[i][0];
                 curV = values[i][1];
             }
-            //编号相等
+            // 编号相等
         }
         toFill.add(curNo + " " + curV);
         StringBuilder res = new StringBuilder();

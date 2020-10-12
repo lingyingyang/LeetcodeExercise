@@ -35,7 +35,7 @@ public class Trie {
         TrieNode cur = root;
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
-            if (!cur.children.containsKey(c)) {//不包括，插入
+            if (!cur.children.containsKey(c)) { // 不包括，插入
                 cur.children.put(c, new TrieNode());
             }
             cur = cur.children.get(c);
@@ -50,7 +50,7 @@ public class Trie {
         TrieNode cur = root;
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
-            if (!cur.children.containsKey(c)) {//不包括
+            if (!cur.children.containsKey(c)) { // 不包括
                 return false;
             }
             cur = cur.children.get(c);
@@ -65,7 +65,7 @@ public class Trie {
         TrieNode cur = root;
         for (int i = 0; i < prefix.length(); i++) {
             char c = prefix.charAt(i);
-            if (!cur.children.containsKey(c)) {//不包括
+            if (!cur.children.containsKey(c)) { // 不包括
                 return false;
             }
             cur = cur.children.get(c);

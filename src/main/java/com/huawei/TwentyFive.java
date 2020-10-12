@@ -52,7 +52,6 @@ public class TwentyFive {
                 result.append(" ");
                 result.append(sb.toString());
             }
-
         }
 
         int all_num = result.toString().split(" ").length;

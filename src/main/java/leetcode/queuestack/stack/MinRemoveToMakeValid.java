@@ -25,14 +25,14 @@ public class MinRemoveToMakeValid {
                 stack.push(i);
             }
             if (s.charAt(i) == ')') {
-                if (stack.isEmpty()) {//前面没有对应的（
+                if (stack.isEmpty()) { // 前面没有对应的（
                     indexesToRemove.add(i);
-                } else {//前面有对应的（，并pop之
+                } else { // 前面有对应的（，并pop之
                     stack.pop();
                 }
             }
         }
-        //把多余的（全部放入indexesToRemove
+        // 把多余的（全部放入indexesToRemove
         while (!stack.isEmpty()) indexesToRemove.add(stack.pop());
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {

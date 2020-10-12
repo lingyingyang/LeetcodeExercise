@@ -21,7 +21,7 @@ public class RightSideView {
         Map<Integer, Integer> rightmostValueAtDepth = new HashMap<>();
         int maxDepth = -1;
 
-        //利用stack的后入先出，确保只读取右节点
+        // 利用stack的后入先出，确保只读取右节点
         Stack<TreeNode> nodeStack = new Stack<>();
         Stack<Integer> depthStack = new Stack<>();
         nodeStack.push(root);
@@ -30,7 +30,7 @@ public class RightSideView {
         while (!nodeStack.isEmpty()) {
             TreeNode curr = nodeStack.pop();
             int depth = depthStack.pop();
-            if (curr == null) continue;//到叶子节点边界
+            if (curr == null) continue; // 到叶子节点边界
 
             // 维护二叉树的最大深度
             maxDepth = Math.max(maxDepth, depth);
@@ -41,7 +41,7 @@ public class RightSideView {
             }
 
             nodeStack.push(curr.left);
-            nodeStack.push(curr.right);//后插入的右节点会被读入rightmostValueAtDepth
+            nodeStack.push(curr.right); // 后插入的右节点会被读入rightmostValueAtDepth
             depthStack.push(depth + 1);
             depthStack.push(depth + 1);
         }

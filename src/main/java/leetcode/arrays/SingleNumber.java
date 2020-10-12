@@ -3,10 +3,10 @@ package leetcode.arrays;
 public class SingleNumber {
     public static void main(String[] args) {
         SingleNumber t = new SingleNumber();
-//        int[] nums = {4, 1, 2, 1, 2};
-//        System.out.println(t.singleNumber(nums));
+        //        int[] nums = {4, 1, 2, 1, 2};
+        //        System.out.println(t.singleNumber(nums));
         int[] nums1 = {2, 2, 1};
-        System.out.println(t.singleNumber(nums1));//1
+        System.out.println(t.singleNumber(nums1)); // 1
     }
 
     public int singleNumber(int[] nums) {

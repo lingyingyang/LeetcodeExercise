@@ -23,8 +23,8 @@ public class AddTwoNumbers {
         while (p != null || q != null) {
             int pVal = (p != null) ? p.val : 0;
             int qVal = (q != null) ? q.val : 0;
-            int sum = carry + pVal + qVal;//如果carry>1,会在下一个节点加上
-            carry = sum / 10;//如果大于10，等于1
+            int sum = carry + pVal + qVal; // 如果carry>1,会在下一个节点加上
+            carry = sum / 10; // 如果大于10，等于1
             curr.next = new ListNode(sum % 10);
             curr = curr.next;
             if (p != null) p = p.next;

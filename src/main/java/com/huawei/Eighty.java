@@ -26,26 +26,27 @@ public class Eighty {
         } else {
             result[0] = 0;
         }
-// 检查交换单元格是否合法
-        if (result[0] == 0 && (arr[2] >= 0 && arr[2] < arr[0] && arr[3] >= 0 && arr[3] < arr[1])
+        // 检查交换单元格是否合法
+        if (result[0] == 0
+                && (arr[2] >= 0 && arr[2] < arr[0] && arr[3] >= 0 && arr[3] < arr[1])
                 && (arr[4] >= 0 && arr[4] < arr[0] && arr[5] >= 0 && arr[5] < arr[1])) {
             result[1] = 0;
         } else {
             result[1] = -1;
         }
-// 检查插入行是否成功
+        // 检查插入行是否成功
         if (result[0] == 0 && (arr[6] >= 0 && arr[6] < arr[0])) {
             result[2] = 0;
         } else {
             result[2] = -1;
         }
-// 检查插入列是否成功
+        // 检查插入列是否成功
         if (result[0] == 0 && (arr[7] >= 0 && arr[7] < arr[1])) {
             result[3] = 0;
         } else {
             result[3] = -1;
         }
-// 检查访问是否成功
+        // 检查访问是否成功
         if (result[0] == 0 && (arr[8] >= 0 && arr[8] < arr[0] && arr[9] >= 0 && arr[9] < arr[1])) {
             result[4] = 0;
         } else {

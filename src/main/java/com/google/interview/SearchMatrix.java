@@ -3,7 +3,13 @@ package com.google.interview;
 public class SearchMatrix {
     public static void main(String[] args) {
         SearchMatrix t = new SearchMatrix();
-        int[][] matrix = {{1, 4, 7, 11, 15}, {2, 5, 8, 12, 19}, {3, 6, 9, 16, 22}, {10, 13, 14, 17, 24}, {18, 21, 23, 26, 30}};
+        int[][] matrix = {
+                {1, 4, 7, 11, 15},
+                {2, 5, 8, 12, 19},
+                {3, 6, 9, 16, 22},
+                {10, 13, 14, 17, 24},
+                {18, 21, 23, 26, 30}
+        };
         System.out.println(t.searchMatrix(matrix, 5));
         int[][] matrix1 = {{1, 1}};
         System.out.println(t.searchMatrix(matrix1, 2));

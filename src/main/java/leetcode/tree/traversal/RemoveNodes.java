@@ -23,8 +23,8 @@ public class RemoveNodes {
         root.left = removeLeaf(root.left, target);
         root.right = removeLeaf(root.right, target);
 
-        if (root.left == null && root.right == null) {//叶子节点
-            if (root.val == target) return null;//删除该叶子节点
+        if (root.left == null && root.right == null) { // 叶子节点
+            if (root.val == target) return null; // 删除该叶子节点
         }
         return root;
     }

@@ -22,7 +22,6 @@ public class SixtyTwo {
         }
     }
 
-
     private static String getCommonString(String s1, String s2) {
         String str = null;
         int len = 0;

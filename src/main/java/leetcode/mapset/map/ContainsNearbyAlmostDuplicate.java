@@ -5,7 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 public class ContainsNearbyAlmostDuplicate {
     public static void main(String[] args) {
         int[] nums = {2147483647, -2147483647};
-        boolean out = new ContainsNearbyAlmostDuplicate().containsNearbyAlmostDuplicate(nums, 1, 2147483647);
+        boolean out =
+                new ContainsNearbyAlmostDuplicate().containsNearbyAlmostDuplicate(nums, 1, 2147483647);
         assertFalse(out);
     }
 

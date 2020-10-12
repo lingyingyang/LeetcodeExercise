@@ -18,7 +18,7 @@ public class SearchBST {
         inorderHelper(root, val);
         return ans;
 
-//        return inorderIter(root, val);
+        //        return inorderIter(root, val);
     }
 
     private void inorderHelper(TreeNode root, int val) {
@@ -38,10 +38,10 @@ public class SearchBST {
      */
     private TreeNode inorderIter(TreeNode root, int target) {
         Stack<TreeNode> stack = new Stack<>();
-        inorderMostLeft(root, stack);//先把包括root的最左子树放进stack
+        inorderMostLeft(root, stack); // 先把包括root的最左子树放进stack
         while (!stack.isEmpty()) {
             TreeNode top = stack.pop();
-            if (top.right != null) {//如果有右子树
+            if (top.right != null) { // 如果有右子树
                 inorderMostLeft(top.right, stack);
             }
 
@@ -55,7 +55,7 @@ public class SearchBST {
     }
 
     private void inorderMostLeft(TreeNode root, Stack<TreeNode> stack) {
-        while (root != null) {//把当前节点的左子树找到底
+        while (root != null) { // 把当前节点的左子树找到底
             stack.push(root);
             root = root.left;
         }

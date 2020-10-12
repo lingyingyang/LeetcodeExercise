@@ -17,7 +17,7 @@ public class RandomizedSet {
     }
 
     /**
-     * 用dict保存val和list的idx，delete时候交换list的last idx和当前idx，再删除last idx<br/>
+     * 用dict保存val和list的idx，delete时候交换list的last idx和当前idx，再删除last idx<br>
      * 可实现O(1)的remove
      */
     private final Map<Integer, Integer> dict;
@@ -25,6 +25,7 @@ public class RandomizedSet {
      * 用list可实现O(1)的insert和getRandom
      */
     private final List<Integer> list;
+
     private final Random rand = new Random();
 
     public RandomizedSet() {
@@ -33,7 +34,8 @@ public class RandomizedSet {
     }
 
     /**
-     * Inserts a value to the set. Returns true if the set did not already contain the specified element.
+     * Inserts a value to the set. Returns true if the set did not already contain the specified
+     * element.
      */
     public boolean insert(int val) {
         if (dict.containsKey(val)) return false;

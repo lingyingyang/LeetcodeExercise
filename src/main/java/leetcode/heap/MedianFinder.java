@@ -5,11 +5,9 @@ import java.util.PriorityQueue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * 时间复杂度：O(logN)，优先队列的出队入队操作都是对数级别的，数据在两个堆中间来回操作是常数级别的，
- * 综上时间复杂度是 O(logN) 级别的。
- * <p>
- * 空间复杂度：O(N)，使用了三个辅助空间，其中两个堆的空间复杂度是 O(N/2)，
- * 一个表示数据流元素个数的计数器 count，占用空间 O(1)，综上空间复杂度为 O(N)。
+ * 时间复杂度：O(logN)，优先队列的出队入队操作都是对数级别的，数据在两个堆中间来回操作是常数级别的， 综上时间复杂度是 O(logN) 级别的。
+ *
+ * <p>空间复杂度：O(N)，使用了三个辅助空间，其中两个堆的空间复杂度是 O(N/2)， 一个表示数据流元素个数的计数器 count，占用空间 O(1)，综上空间复杂度为 O(N)。
  */
 public class MedianFinder {
     public static void main(String[] args) {

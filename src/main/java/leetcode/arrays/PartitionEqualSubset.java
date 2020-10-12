@@ -5,9 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.Arrays;
 
 /**
- * https://leetcode.com/problems/partition-equal-subset-sum/
- * 0/1 Knapsack problem, can any element sum up to half sum?
- * if yes, return true.
+ * https://leetcode.com/problems/partition-equal-subset-sum/ 0/1 Knapsack problem, can any element
+ * sum up to half sum? if yes, return true.
  */
 @Slf4j
 public class PartitionEqualSubset {

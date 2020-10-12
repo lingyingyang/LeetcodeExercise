@@ -26,12 +26,12 @@ public class IsBalanced {
             return new TreeInfo(false, -1);
         }
 
-        //子树是平衡树
+        // 子树是平衡树
         if (Math.abs(left.getHeight() - right.getHeight()) < 2) {
             return new TreeInfo(true, Math.max(left.getHeight(), right.getHeight()) + 1);
         }
 
-        //子树不是平衡树
+        // 子树不是平衡树
         return new TreeInfo(false, -1);
     }
 

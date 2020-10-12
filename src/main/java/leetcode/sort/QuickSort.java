@@ -25,7 +25,7 @@ public class QuickSort {
     }
 
     private int partition(int[] nums, int head, int tail) {
-        //取得pivot
+        // 取得pivot
         int pivot = head + (int) (Math.random() * (tail - head + 1));
         swap(nums, head, pivot);
 
@@ -46,8 +46,8 @@ public class QuickSort {
         nums[j] ^= nums[i];
         nums[i] ^= nums[j];
 
-//        int tmp = nums[i];
-//        nums[i] = nums[j];
-//        nums[j] = tmp;
+        //        int tmp = nums[i];
+        //        nums[i] = nums[j];
+        //        nums[j] = tmp;
     }
 }

@@ -10,7 +10,7 @@ public class Search {
         Search t = new Search();
         assertThat(t.searchFirstMatch(new int[]{-1, 0, 3, 5, 9, 12}, 12)).isEqualTo(5);
 
-        //LeftMost
+        // LeftMost
         assertThat(t.searchLeftMost(new int[]{1, 2, 2}, 2)).isEqualTo(1);
         assertThat(t.searchLeftMost(new int[]{2, 2, 2}, 2)).isEqualTo(0);
         assertThat(t.searchLeftMost(new int[]{2, 2, 2}, 3)).isEqualTo(-1);
@@ -21,17 +21,21 @@ public class Search {
         assertThat(t.searchLeftMost_exitWhenLeftEqualRight(new int[]{2, 2, 2}, 3)).isEqualTo(-1);
         assertThat(t.searchLeftMost_exitWhenLeftEqualRight(new int[]{2, 2, 2}, 1)).isEqualTo(-1);
 
-        //RightMost
+        // RightMost
         assertThat(t.searchRightMost(new int[]{2, 2, 3}, 2)).isEqualTo(1);
         assertThat(t.searchRightMost(new int[]{2, 2, 2}, 2)).isEqualTo(2);
         assertThat(t.searchRightMost(new int[]{2, 2, 2}, 3)).isEqualTo(-1);
         assertThat(t.searchRightMost(new int[]{2, 2, 2}, 1)).isEqualTo(-1);
         assertThat(t.searchRightMost(new int[]{2, 2, 3, 4}, 2)).isEqualTo(1);
 
-//        assertThat(t.searchRightMost_existWhenLeftEqualsRight(new int[]{2, 2, 3}, 2)).isEqualTo(1);
-//        assertThat(t.searchRightMost_existWhenLeftEqualsRight(new int[]{2, 2, 2}, 2ff)).isEqualTo(2);
-//        assertThat(t.searchRightMost_existWhenLeftEqualsRight(new int[]{2, 2, 2}, 3)).isEqualTo(-1);
-//        assertThat(t.searchRightMost_existWhenLeftEqualsRight(new int[]{2, 2, 2}, 1)).isEqualTo(-1);
+        //        assertThat(t.searchRightMost_existWhenLeftEqualsRight(new int[]{2, 2, 3},
+        // 2)).isEqualTo(1);
+        //        assertThat(t.searchRightMost_existWhenLeftEqualsRight(new int[]{2, 2, 2},
+        // 2ff)).isEqualTo(2);
+        //        assertThat(t.searchRightMost_existWhenLeftEqualsRight(new int[]{2, 2, 2},
+        // 3)).isEqualTo(-1);
+        //        assertThat(t.searchRightMost_existWhenLeftEqualsRight(new int[]{2, 2, 2},
+        // 1)).isEqualTo(-1);
     }
 
     /**
@@ -45,12 +49,12 @@ public class Search {
         if (nums == null || nums.length == 0) return -1;
 
         int left = 0, right = nums.length - 1;
-        while (left <= right) {//终止条件：left==right
-            int mid = left + (right - left) / 2;//分成[0..mid-1],mid,[mid+1..len-1]来比较
+        while (left <= right) { // 终止条件：left==right
+            int mid = left + (right - left) / 2; // 分成[0..mid-1],mid,[mid+1..len-1]来比较
             if (target == nums[mid]) return mid;
-            else if (target < nums[mid]) {//target在左边的区间
+            else if (target < nums[mid]) { // target在左边的区间
                 right = mid - 1;
-            } else {//target在右边的区间
+            } else { // target在右边的区间
                 left = mid + 1;
             }
         }
@@ -69,11 +73,11 @@ public class Search {
         if (nums == null || nums.length == 0) return -1;
 
         int left = 0, right = nums.length - 1;
-        while (left <= right) {//终止条件：left刚好大于right，且right在left前一位
-            int mid = left + (right - left) / 2;//分成[0..mid-1],mid,[mid+1..len-1]来比较
-            if (target <= nums[mid]) {//target在左区间，等于的条件划给了左区间
+        while (left <= right) { // 终止条件：left刚好大于right，且right在left前一位
+            int mid = left + (right - left) / 2; // 分成[0..mid-1],mid,[mid+1..len-1]来比较
+            if (target <= nums[mid]) { // target在左区间，等于的条件划给了左区间
                 right = mid - 1;
-            } else {//target在右区间
+            } else { // target在右区间
                 left = mid + 1;
             }
         }
@@ -85,11 +89,11 @@ public class Search {
     public int searchLeftMost_exitWhenLeftEqualRight(int[] nums, int target) {
         if (nums == null || nums.length == 0) return -1;
         int left = 0, right = nums.length - 1;
-        while (left < right) {//终止条件：left==right
+        while (left < right) { // 终止条件：left==right
             int mid = left + (right - left) / 2;
-            if (target <= nums[mid]) {//target在左区间，等于的条件划给了左区间
+            if (target <= nums[mid]) { // target在左区间，等于的条件划给了左区间
                 right = mid;
-            } else /*target > nums[mid]*/ {//target在右区间
+            } else /*target > nums[mid]*/ { // target在右区间
                 left = mid + 1;
             }
         }
@@ -108,11 +112,11 @@ public class Search {
         if (nums == null || nums.length == 0) return -1;
 
         int left = 0, right = nums.length - 1;
-        while (left <= right) {//终止条件：left刚好大于right，且right在left前一位
-            int mid = left + (right - left) / 2;//分成[0..mid-1],mid,[mid+1..len-1]来比较
-            if (target < nums[mid]) {//target在左区间
+        while (left <= right) { // 终止条件：left刚好大于right，且right在left前一位
+            int mid = left + (right - left) / 2; // 分成[0..mid-1],mid,[mid+1..len-1]来比较
+            if (target < nums[mid]) { // target在左区间
                 right = mid - 1;
-            } else /*target >= nums[mid]*/ {//target在右区间，等于的条件划给了右区间
+            } else /*target >= nums[mid]*/ { // target在右区间，等于的条件划给了右区间
                 left = mid + 1;
             }
         }
@@ -126,12 +130,12 @@ public class Search {
         if (nums == null || nums.length == 0) return -1;
 
         int left = 0, right = nums.length - 1;
-        while (left < right) {//终止条件：left==right
+        while (left < right) { // 终止条件：left==right
             System.out.printf("left: %d, right: %d\n", left, right);
-            int mid = left + (right - left) / 2;//分成[0..mid-1],mid,[mid+1..len-1]来比较
-            if (target >= nums[mid]) {//target在右区间，等于的条件划给了右区间
+            int mid = left + (right - left) / 2; // 分成[0..mid-1],mid,[mid+1..len-1]来比较
+            if (target >= nums[mid]) { // target在右区间，等于的条件划给了右区间
                 left = mid;
-            } else {//target在左区间
+            } else { // target在左区间
                 right = mid - 1;
             }
         }

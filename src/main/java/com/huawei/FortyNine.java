@@ -30,7 +30,6 @@ public class FortyNine {
                     head.next = n;
                     head = head.next;
                 }
-
             }
             node first = root;
             node second = root;

@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 public class Seventy {
     public static int getAllDay(int year, int month, int day) {
         int[] daysOfMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        //判断闰年
+        // 判断闰年
         if (year % 4 == 0) daysOfMonth[1] = 29;
         int total = 0;
         for (int i = 0; i < month - 1; i++) {
@@ -30,6 +30,5 @@ public class Seventy {
             int day = Integer.parseInt(ins[2]);
             System.out.println(getAllDay(year, month, day));
         }
-
     }
 }

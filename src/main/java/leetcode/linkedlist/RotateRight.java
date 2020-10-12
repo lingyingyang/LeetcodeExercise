@@ -14,20 +14,20 @@ public class RotateRight {
 
         ListNode firstRound = head;
         int len = 1;
-        //到达链表尾部，并得到len
+        // 到达链表尾部，并得到len
         while (firstRound.next != null) {
             firstRound = firstRound.next;
             len++;
         }
-        //链表首尾连接
+        // 链表首尾连接
         ListNode end = firstRound;
         firstRound.next = head;
-        //k%len可映射全部k大于len的情况，len-k%len可得到新的尾节点还需要移动几步
+        // k%len可映射全部k大于len的情况，len-k%len可得到新的尾节点还需要移动几步
         for (int i = 0; i < (len - k % len); i++) {
             end = end.next;
         }
-        ListNode start = end.next;//未节点的next就是新链表的首节点
-        end.next = null;//断开环形链表
+        ListNode start = end.next; // 未节点的next就是新链表的首节点
+        end.next = null; // 断开环形链表
         return start;
     }
 
@@ -47,7 +47,7 @@ public class RotateRight {
         ListNode curr = head;
         for (int i = 0; i < k; i++) {
             while (true) {
-                if (curr.next == null) {//到达最后一个节点
+                if (curr.next == null) { // 到达最后一个节点
                     curr.next = head;
                     prev.next = null;
                     head = curr;

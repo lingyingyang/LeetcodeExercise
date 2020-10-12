@@ -24,12 +24,12 @@ public class YangTriangle {
     public void helper(List<List<Integer>> ans, int row, int rows) {
         if (row >= rows) return;
 
-        ans.get(row).add(1);//每行赋值第一位为1
+        ans.get(row).add(1); // 每行赋值第一位为1
         for (int col = 1; col < row; col++) {
             int value = ans.get(row - 1).get(col - 1) + ans.get(row - 1).get(col);
             ans.get(row).add(value);
         }
-        //除了第一行外，其他行都需要赋值最后一位为1
+        // 除了第一行外，其他行都需要赋值最后一位为1
         if (row > 0) {
             ans.get(row).add(1);
         }

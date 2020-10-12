@@ -24,7 +24,7 @@ public class IsIsomorphic {
     }
 
     public boolean isIsomorphicHelper(String s, String t) {
-        //map存储s与t的字符替换映射
+        // map存储s与t的字符替换映射
         Map<Character, Character> map = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
             char c1 = s.charAt(i);

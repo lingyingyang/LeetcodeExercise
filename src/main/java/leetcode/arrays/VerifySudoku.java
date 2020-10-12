@@ -27,11 +27,10 @@ public class VerifySudoku {
             for (int col = 0; col < 9; col++) {
                 char currVal = board[row][col];
                 if (currVal == '.') continue;
-                //用HashSet来判断3种条件是否符合
-                if (!set.add(currVal + " in row " + row) ||
-                        !set.add(currVal + " in column " + col) ||
-                        !set.add(currVal + " in block " + row / 3 + "," + col / 3))
-                    return false;
+                // 用HashSet来判断3种条件是否符合
+                if (!set.add(currVal + " in row " + row)
+                        || !set.add(currVal + " in column " + col)
+                        || !set.add(currVal + " in block " + row / 3 + "," + col / 3)) return false;
             }
         }
         return true;

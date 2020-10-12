@@ -10,7 +10,7 @@ public class Five {
         String cmd = in.nextLine();
         int num = Integer.parseInt(in.nextLine());
         int turnNum = 0;
-        List<Integer/*idx of T*/> turns = new ArrayList<>();
+        List<Integer /*idx of T*/> turns = new ArrayList<>();
         for (int i = 0; i < cmd.length(); i++) {
             if (cmd.charAt(i) == 'T') {
                 turnNum++;

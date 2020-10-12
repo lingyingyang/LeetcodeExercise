@@ -25,21 +25,22 @@ public class One {
             }
 
             List<String> items = new ArrayList<>();
-            map.forEach((k, v) -> {
-                int min = Integer.MAX_VALUE, max = 0, sum = 0, avg;
-                for (int price : v) {
-                    min = Math.min(price, min);
-                    max = Math.max(price, max);
-                    sum += price;
-                }
-                avg = sum / v.size();
-                StringBuilder sb = new StringBuilder();
-                sb.append(k).append(" ");
-                sb.append(min).append(" ");
-                sb.append(max).append(" ");
-                sb.append(avg);
-                items.add(sb.toString());
-            });
+            map.forEach(
+                    (k, v) -> {
+                        int min = Integer.MAX_VALUE, max = 0, sum = 0, avg;
+                        for (int price : v) {
+                            min = Math.min(price, min);
+                            max = Math.max(price, max);
+                            sum += price;
+                        }
+                        avg = sum / v.size();
+                        StringBuilder sb = new StringBuilder();
+                        sb.append(k).append(" ");
+                        sb.append(min).append(" ");
+                        sb.append(max).append(" ");
+                        sb.append(avg);
+                        items.add(sb.toString());
+                    });
             Collections.sort(items);
             out.add(items);
         }
@@ -49,6 +50,5 @@ public class One {
             out.get(i).forEach(System.out::println);
             if (i != (out.size())) System.out.println();
         }
-
     }
 }

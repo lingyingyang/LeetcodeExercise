@@ -25,8 +25,8 @@ public class HashMD5Example {
         String ans = null;
         try {
             ans = origin;
-//            MessageDigest md = MessageDigest.getInstance("MD5");
-//            ans = byteArrayToString(md.digest(ans.getBytes()));
+            //            MessageDigest md = MessageDigest.getInstance("MD5");
+            //            ans = byteArrayToString(md.digest(ans.getBytes()));
             MessageDigest md = DigestUtils.getMd5Digest();
             ans = byteArrayToString(md.digest(ans.getBytes()));
         } catch (Exception e) {

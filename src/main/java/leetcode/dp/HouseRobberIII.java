@@ -13,7 +13,7 @@ public class HouseRobberIII {
         assertThat(out).isEqualTo(7);
     }
 
-    //0: 不偷；1：偷
+    // 0: 不偷；1：偷
     public static final int NO_ROB = 0;
     public static final int ROB = 1;
 
@@ -30,9 +30,9 @@ public class HouseRobberIII {
         int[] left = robHelper(root.left);
         int[] right = robHelper(root.right);
 
-        //不偷的时候，当前节点的最大值 = 左节点能偷到的最大值 + 右节点能偷到的最大值
+        // 不偷的时候，当前节点的最大值 = 左节点能偷到的最大值 + 右节点能偷到的最大值
         ans[NO_ROB] = max(left[ROB], left[NO_ROB]) + max(right[ROB], right[NO_ROB]);
-        //偷的时候，当前节点的最大值 = 左节点不偷时的最大值 + 右节点不偷时的最大值 + 当前节点的值
+        // 偷的时候，当前节点的最大值 = 左节点不偷时的最大值 + 右节点不偷时的最大值 + 当前节点的值
         ans[ROB] = left[NO_ROB] + right[NO_ROB] + root.val;
         return ans;
     }

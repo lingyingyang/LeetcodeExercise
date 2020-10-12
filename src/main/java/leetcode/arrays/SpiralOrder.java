@@ -9,7 +9,8 @@ public class SpiralOrder {
         int[][] matrix = {
                 {1, 2, 3},
                 {4, 5, 6},
-                {7, 8, 9}};
+                {7, 8, 9}
+        };
         List<Integer> out = t.spiralOrder(matrix);
         System.out.println(out.toString());
     }
@@ -23,18 +24,20 @@ public class SpiralOrder {
         int[] rowDirect = {0, 1, 0, -1};
         int[] colDirect = {1, 0, -1, 0};
         int row = 0, col = 0, direct = 0;
-        for (int i = 0; i < rowLen * colLen; i++) {//遍历所有
+        for (int i = 0; i < rowLen * colLen; i++) { // 遍历所有
             ans.add(matrix[row][col]);
             seen[row][col] = true;
-            //判断下一个row和col
+            // 判断下一个row和col
             int nextRow = row + rowDirect[direct];
             int nextCol = col + colDirect[direct];
-            if (0 <= nextRow && nextRow < rowLen
-                    && 0 <= nextCol && nextCol < colLen
-                    && !seen[nextRow][nextCol]) {//边界条件判断
+            if (0 <= nextRow
+                    && nextRow < rowLen
+                    && 0 <= nextCol
+                    && nextCol < colLen
+                    && !seen[nextRow][nextCol]) { // 边界条件判断
                 row = nextRow;
                 col = nextCol;
-            } else {//该顺时针转向
+            } else { // 该顺时针转向
                 direct = (direct + 1) % 4;
                 row += rowDirect[direct];
                 col += colDirect[direct];

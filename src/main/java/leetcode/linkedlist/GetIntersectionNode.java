@@ -22,7 +22,7 @@ public class GetIntersectionNode {
         ListNode aPointer = headA;
         ListNode bPointer = headB;
         while (aPointer != bPointer) {
-            //遍历完一条链表后交换pointer，如果有交点，两个pointer就会碰到
+            // 遍历完一条链表后交换pointer，如果有交点，两个pointer就会碰到
             aPointer = (aPointer == null) ? headB : aPointer.next;
             bPointer = (bPointer == null) ? headA : bPointer.next;
         }

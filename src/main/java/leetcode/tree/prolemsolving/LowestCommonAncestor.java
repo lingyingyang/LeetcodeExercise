@@ -9,8 +9,7 @@ public class LowestCommonAncestor {
         TreeNode root = NodeUtil.createTree(nums);
         NodeUtil.print(root);
         LowestCommonAncestor t = new LowestCommonAncestor();
-        TreeNode out = t.lowestCommonAncestor(root,
-                new TreeNode(9), new TreeNode(11));
+        TreeNode out = t.lowestCommonAncestor(root, new TreeNode(9), new TreeNode(11));
         System.out.println(out.val);
     }
 

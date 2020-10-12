@@ -40,9 +40,9 @@ public class MapSum {
                 cur.children.put(c, new TrieNode());
             }
             cur = cur.children.get(c);
-            if (!result.isContains) {//不包括这个word
+            if (!result.isContains) { // 不包括这个word
                 cur.count += val;
-            } else {//包括这个word，取代其count
+            } else { // 包括这个word，取代其count
                 cur.count += val - result.node.count;
             }
         }
@@ -53,7 +53,7 @@ public class MapSum {
         TrieNode cur = root;
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
-            if (!cur.children.containsKey(c)) {//不包括
+            if (!cur.children.containsKey(c)) { // 不包括
                 return new SearchResult(null, false);
             }
             cur = cur.children.get(c);

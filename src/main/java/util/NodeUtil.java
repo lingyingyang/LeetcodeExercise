@@ -13,7 +13,7 @@ public class NodeUtil {
         ListNode dump = curr;
         for (int num : nums) {
             curr.next = new ListNode(num);
-            curr = curr.next;//idx移到下一位
+            curr = curr.next; // idx移到下一位
         }
         return dump.next;
     }

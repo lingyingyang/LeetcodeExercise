@@ -15,12 +15,11 @@ public class NumberOfSteps {
     private int helper(int num) {
         if (num == 0) return 0;
 
-        if ((num & 1) == 0) {//偶数
+        if ((num & 1) == 0) { // 偶数
             num = num / 2;
-        } else {//奇数
+        } else { // 奇数
             num -= 1;
         }
         return helper(num) + 1;
-
     }
 }

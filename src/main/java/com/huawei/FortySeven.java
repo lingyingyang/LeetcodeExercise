@@ -6,7 +6,7 @@ import java.util.Scanner;
  * 多线程
  */
 public class FortySeven {
-    private final static int THREAD_NUM = 4;
+    private static final int THREAD_NUM = 4;
     private static char[] chs = new char[1032 * THREAD_NUM];
 
     public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class FortySeven {
         sc.close();
     }
 
-    //创建线程并进行调用
+    // 创建线程并进行调用
     private static void createThreads() {
         char ch = 'A';
         for (int i = 0; i < THREAD_NUM; i++) {
@@ -27,7 +27,7 @@ public class FortySeven {
         }
     }
 
-    //内部线程类
+    // 内部线程类
     private static class InnerThread implements Runnable {
         private char ch;
         private int index;

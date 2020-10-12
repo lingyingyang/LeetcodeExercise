@@ -4,7 +4,7 @@ public class IncreasingTriplet {
     public static void main(String[] args) {
         IncreasingTriplet t = new IncreasingTriplet();
         boolean out = t.increasingTriplet(new int[]{1, 2, 1, 3, 4, 5});
-        System.out.println(out);//true
+        System.out.println(out); // true
     }
 
     public boolean increasingTriplet(int[] nums) {

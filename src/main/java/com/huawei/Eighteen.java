@@ -65,8 +65,8 @@ public class Eighteen {
         }
         sc.close();
 
-        System.out.printf("%d %d %d %d %d %d %d%n", typeA, typeB, typeC, typeD, typeE, errorIpOrMaskCode, privateIp);
-
+        System.out.printf(
+                "%d %d %d %d %d %d %d%n", typeA, typeB, typeC, typeD, typeE, errorIpOrMaskCode, privateIp);
     }
 
     /**
@@ -74,8 +74,7 @@ public class Eighteen {
      */
     private static boolean isValidFormat(String ip) {
         boolean res = true;
-        if (ip == null || "".equals(ip))
-            return false;
+        if (ip == null || "".equals(ip)) return false;
         Pattern pattern = Pattern.compile("^(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)$");
         Matcher matcher = pattern.matcher(ip);
 

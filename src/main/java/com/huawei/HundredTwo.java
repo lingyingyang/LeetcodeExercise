@@ -29,7 +29,5 @@ public class HundredTwo {
             System.out.format("%.1f", (float) total / noNegNum);
             System.out.println();
         }
-
-
     }
 }

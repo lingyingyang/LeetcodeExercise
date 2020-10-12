@@ -18,11 +18,9 @@ public class SeventyFive {
             int len1 = sb1.length();
             int len2 = sb2.length();
             if (len1 > len2) {
-                for (int i = 0; i < len1 - len2; i++)
-                    sb2.insert(0, "0");
+                for (int i = 0; i < len1 - len2; i++) sb2.insert(0, "0");
             } else {
-                for (int i = 0; i < len2 - len1; i++)
-                    sb1.insert(0, "0");
+                for (int i = 0; i < len2 - len1; i++) sb1.insert(0, "0");
             }
             StringBuilder sb = new StringBuilder();
             int temp = 0;
@@ -33,8 +31,7 @@ public class SeventyFive {
                 sb.insert(0, sum % 10);
                 temp = sum / 10;
             }
-            if (temp != 0)
-                sb.insert(0, temp);
+            if (temp != 0) sb.insert(0, temp);
             System.out.println(sb.toString());
         }
     }

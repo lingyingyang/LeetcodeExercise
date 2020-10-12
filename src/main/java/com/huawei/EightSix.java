@@ -11,7 +11,6 @@ public class EightSix {
     public static boolean isA = false;
     private static char[] operations = {'+', '-', '*', '/'};
 
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String input;
@@ -28,7 +27,6 @@ public class EightSix {
             }
             getAllComp(a, b, c, d);
         }
-
     }
 
     /**
@@ -77,20 +75,24 @@ public class EightSix {
 
                             char[][] all = getAllSign();
 
-
                             for (char[] chars : all) {
                                 float sum = calc(src[i], src[j], chars[0]);
                                 sum = calc(sum, src[x], chars[1]);
                                 sum = calc(sum, src[y], chars[2]);
                                 if (Float.compare(sum, 24) == 0) {
-                                    if ((src[i] == 7)
-                                            && (src[j] == 4)
-                                            && (src[x] == 4)
-                                            && (src[y] == 2)) {
+                                    if ((src[i] == 7) && (src[j] == 4) && (src[x] == 4) && (src[y] == 2)) {
                                         System.out.println("7-4*2*4");
                                     } else {
-                                        System.out
-                                                .println(change2(src[i]) + "" + chars[0] + "" + change2(src[j]) + chars[1] + change2(src[x]) + chars[2] + change2(src[y]));
+                                        System.out.println(
+                                                change2(src[i])
+                                                        + ""
+                                                        + chars[0]
+                                                        + ""
+                                                        + change2(src[j])
+                                                        + chars[1]
+                                                        + change2(src[x])
+                                                        + chars[2]
+                                                        + change2(src[y]));
                                     }
                                     return;
                                 }
@@ -139,10 +141,8 @@ public class EightSix {
 
     public static String change2(int a) {
         if (a == 1) {
-            if (isA)
-                return "A";
-            else
-                return "1";
+            if (isA) return "A";
+            else return "1";
         } else if (a == 11) {
             return "J";
         } else if (a == 12) {

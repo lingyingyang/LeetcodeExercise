@@ -10,4 +10,5 @@ public class Node {
     public Node(int val) {
         this.val = val;
     }
-};
+}
+;

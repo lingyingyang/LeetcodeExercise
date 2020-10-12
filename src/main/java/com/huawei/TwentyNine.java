@@ -49,7 +49,6 @@ public class TwentyNine {
         return sb.toString();
     }
 
-
     private static String unEncrypt(String line) {
         char[] cha = line.toCharArray();
         StringBuilder sb = new StringBuilder();
