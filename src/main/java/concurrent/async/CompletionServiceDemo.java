@@ -27,10 +27,12 @@ public class CompletionServiceDemo {
         isOk = isOk && cs.take().get();
       } catch (InterruptedException | ExecutionException e) {
         e.printStackTrace();
+        Thread.currentThread().interrupt();
       }
     }
     if (isOk) {
       log.info("泡茶喝，茶喝完");
     }
+    jPool.shutdown();
   }
 }
